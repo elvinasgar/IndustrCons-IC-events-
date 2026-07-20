@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Apply — IC Events</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="js/tailwind-config.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-paper text-ink">
+
+  <header class="border-b border-ink/10 sticky top-0 z-30 bg-paper/90 backdrop-blur">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2">
+        <div class="h-8 w-8 rounded-full bg-blueprint-500 flex items-center justify-center text-white font-display text-sm font-medium">IC</div>
+        <span class="font-display font-medium tracking-tight">IC Events</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6 text-sm text-steel-600">
+        <a href="chapters.html" class="hover:text-ink">Chapters</a>
+        <a href="events.html" class="hover:text-ink">Events</a>
+        <a href="accreditation.html" class="hover:text-ink">Accreditation</a>
+        <a href="faq.html" class="hover:text-ink">FAQ</a>
+        <a href="about.html" class="hover:text-ink">About</a>
+      </nav>
+      <div class="flex items-center gap-2">
+        <a href="register.html" class="btn-primary hidden sm:inline-flex">Apply now →</a>
+        <button onclick="toggleMobileMenu()" class="md:hidden p-2" aria-label="Menu">☰</button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="mobile-menu md:hidden flex-col gap-1 px-6 pb-4 border-t border-ink/10">
+      <a href="chapters.html" class="py-2 text-sm">Chapters</a>
+      <a href="events.html" class="py-2 text-sm">Events</a>
+      <a href="accreditation.html" class="py-2 text-sm">Accreditation</a>
+      <a href="faq.html" class="py-2 text-sm">FAQ</a>
+      <a href="about.html" class="py-2 text-sm">About</a>
+      <a href="contact.html" class="py-2 text-sm">Contact</a>
+      <a href="register.html" class="btn-primary justify-center mt-2">Apply now</a>
+    </div>
+  </header>
+
+  <section class="py-16">
+    <div class="max-w-2xl mx-auto px-6">
+      <span class="label-mono">APPLICATION</span>
+      <h1 class="mt-3 font-display text-3xl font-medium tracking-tight">Apply to IndustrCons.</h1>
+      <p class="mt-3 text-steel-600 leading-relaxed">
+        Tell us what you'd like to do. We review every application by hand and reply by email —
+        applications do not create an account or go into a database, they're simply emailed to
+        our team.
+      </p>
+
+      <div class="mt-8 grid grid-cols-2 gap-3">
+        <button type="button" data-type="license" class="type-btn card text-left border-2">
+          <p class="font-display font-medium">Chapter license</p>
+          <p class="text-xs text-steel-500 mt-1">I want to run IndustrCons events in my city.</p>
+        </button>
+        <button type="button" data-type="event" class="type-btn card text-left border-2">
+          <p class="font-display font-medium">Propose an event</p>
+          <p class="text-xs text-steel-500 mt-1">My chapter is licensed, I want to run one event.</p>
+        </button>
+      </div>
+
+      <!--
+        HOW TO CONNECT THIS FORM (no code needed):
+        1. Go to https://formspree.io and create a free account.
+        2. Create a new form — it gives you a code like abcd1234.
+        3. Replace YOUR_FORM_ID right below with that code.
+        That's it. Submissions will arrive in your email.
+      -->
+      <form id="application-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="mt-8 flex flex-col gap-5">
+        <input type="hidden" name="application_type" id="application_type" value="license" />
+
+        <div class="flex flex-col gap-2">
+          <label class="text-sm font-medium" for="full_name">Full name</label>
+          <input id="full_name" name="full_name" required class="field-input" />
+        </div>
+
+        <div class="flex flex-col gap-2">
+          <label class="text-sm font-medium" for="email">Email</label>
+          <input id="email" name="email" type="email" required class="field-input" />
+        </div>
+
+        <div class="flex flex-col gap-2">
+          <label class="text-sm font-medium" for="city">City / Region</label>
+          <input id="city" name="city" required class="field-input" />
+        </div>
+
+        <div class="flex flex-col gap-2 conditional-field" data-show-for="license">
+          <label class="text-sm font-medium" for="organization">Organization (if any)</label>
+          <input id="organization" name="organization" class="field-input" />
+        </div>
+
+        <div class="flex flex-col gap-2 conditional-field" data-show-for="event">
+          <label class="text-sm font-medium" for="event_date">Proposed date</label>
+          <input id="event_date" name="event_date" type="date" class="field-input" />
+        </div>
+        <div class="flex flex-col gap-2 conditional-field" data-show-for="event">
+          <label class="text-sm font-medium" for="expected_attendees">Expected attendees</label>
+          <input id="expected_attendees" name="expected_attendees" type="number" min="1" class="field-input" />
+        </div>
+
+        <div class="flex flex-col gap-2">
+          <label class="text-sm font-medium" for="message">Tell us more</label>
+          <textarea id="message" name="message" rows="4" required
+            class="rounded-lg border border-ink/15 bg-white px-3.5 py-3 text-sm outline-none focus:border-blueprint-500"></textarea>
+        </div>
+
+        <button id="submit-btn" type="submit" class="btn-primary mt-2 w-fit">Submit application</button>
+        <div id="form-status" class="hidden"></div>
+      </form>
+    </div>
+  </section>
+
+  <footer class="border-t border-ink/10 py-10">
+    <div class="max-w-6xl mx-auto px-6 flex flex-wrap items-center justify-between gap-4 text-xs text-steel-400">
+      <span>© 2026 IndustrCons Event. All rights reserved.</span>
+      <div class="flex gap-4">
+        <a href="contact.html" class="hover:text-ink">Contact</a>
+        <a href="faq.html" class="hover:text-ink">FAQ</a>
+        <a href="register.html" class="hover:text-ink">Apply</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/site.js"></script>
+</body>
+</html>
