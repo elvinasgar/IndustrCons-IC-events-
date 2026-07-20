@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>IC Events — IndustrCons</title>
+<meta name="description" content="IndustrCons Event — engineering community congresses, chapters and accreditation." />
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          ink: { DEFAULT: '#0B0E14', soft: '#12161F', line: '#1E2430' },
+          paper: { DEFAULT: '#F7F7F4', soft: '#EFEEE8', line: '#E2E0D6' },
+          blueprint: { 50:'#EEF3FF',100:'#DCE6FF',200:'#B4C8FF',300:'#7E9FFF',400:'#4A72F0',500:'#1E4FD8',600:'#173CAA',700:'#122E82' },
+          signal: { DEFAULT: '#F2A93B', soft: '#FBE4B8', deep: '#C97F1B' },
+          steel: { 400:'#7B8492',500:'#5C6472',600:'#454B57' },
+        },
+        fontFamily: {
+          display: ['"Space Grotesk"', 'system-ui', 'sans-serif'],
+          body: ['Inter', 'system-ui', 'sans-serif'],
+          mono: ['"IBM Plex Mono"', 'ui-monospace', 'monospace'],
+        }
+      }
+    }
+  }
+</script>
+<style>
+  body { font-family: 'Inter', system-ui, sans-serif; }
+  .label-mono { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #1E4FD8; font-weight: 500; }
+  .font-display { font-family: 'Space Grotesk', sans-serif; }
+</style>
+</head>
+<body class="bg-paper text-ink">
+
+  <!-- HEADER -->
+  <header class="border-b border-ink/10 sticky top-0 z-30 bg-paper/90 backdrop-blur">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2">
+        <div class="h-8 w-8 rounded-full bg-blueprint-500 flex items-center justify-center text-white font-display text-sm font-medium">IC</div>
+        <span class="font-display font-medium tracking-tight">IC Events</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6 text-sm text-steel-600">
+        <a href="#chapters" class="hover:text-ink">Chapters</a>
+        <a href="#events" class="hover:text-ink">Events</a>
+        <a href="#accreditation" class="hover:text-ink">Accreditation</a>
+      </nav>
+      <a href="apply.html" class="text-sm font-medium bg-blueprint-500 text-white px-4 py-2 rounded-full">
+        Apply now →
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="py-20 border-b border-ink/10">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <span class="label-mono">GLOBAL ENGINEERING COMMUNITY</span>
+      <h1 class="mt-5 font-display text-4xl sm:text-5xl font-medium tracking-tight max-w-3xl mx-auto">
+        Where engineers organize, speak, and get accredited.
+      </h1>
+      <p class="mt-5 text-steel-600 max-w-xl mx-auto leading-relaxed">
+        IndustrCons Event is a global network of licensed chapters running engineering
+        congresses, workshops, and community meetups — TEDx-style, but for the trades that build
+        the world.
+      </p>
+      <div class="mt-8 flex items-center justify-center gap-3">
+        <a href="apply.html?type=license" class="bg-blueprint-500 text-white px-5 py-2.5 rounded-full text-sm font-medium">
+          Get a chapter license
+        </a>
+        <a href="apply.html?type=event" class="border border-ink/15 px-5 py-2.5 rounded-full text-sm font-medium">
+          Propose an event
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHAPTERS -->
+  <section id="chapters" class="py-20 border-b border-ink/10">
+    <div class="max-w-6xl mx-auto px-6">
+      <span class="label-mono">SEC.01 — CHAPTERS</span>
+      <h2 class="mt-3 font-display text-2xl sm:text-3xl font-medium tracking-tight">Licensed chapters worldwide</h2>
+      <p class="mt-3 text-steel-600 max-w-2xl leading-relaxed">
+        Every chapter is reviewed and licensed by IndustrCons before it can run events under our
+        name and standards.
+      </p>
+      <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="rounded-2xl border border-ink/10 p-5 bg-white/50">
+          <p class="font-display font-medium">Baku Chapter</p>
+          <p class="text-xs text-steel-500 mt-1">Licensed · Gold accreditation</p>
+          <p class="text-sm text-steel-600 mt-3">12 events · 640 participants</p>
+        </div>
+        <div class="rounded-2xl border border-ink/10 p-5 bg-white/50">
+          <p class="font-display font-medium">Istanbul Chapter</p>
+          <p class="text-xs text-steel-500 mt-1">Licensed · Silver accreditation</p>
+          <p class="text-sm text-steel-600 mt-3">7 events · 310 participants</p>
+        </div>
+        <div class="rounded-2xl border border-ink/10 p-5 bg-white/50">
+          <p class="font-display font-medium">Your city?</p>
+          <p class="text-xs text-steel-500 mt-1">Not licensed yet</p>
+          <a href="apply.html?type=license" class="text-sm text-blueprint-600 font-medium mt-3 inline-block">Apply for a license →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EVENTS -->
+  <section id="events" class="py-20 border-b border-ink/10">
+    <div class="max-w-6xl mx-auto px-6">
+      <span class="label-mono">SEC.02 — UPCOMING EVENTS</span>
+      <h2 class="mt-3 font-display text-2xl sm:text-3xl font-medium tracking-tight">What's happening</h2>
+      <div class="mt-8 grid gap-4 sm:grid-cols-2">
+        <div class="rounded-2xl border border-ink/10 p-5 bg-white/50">
+          <p class="text-xs text-steel-500">MAR 14, 2026 · BAKU</p>
+          <p class="font-display font-medium mt-1">Regional Engineering Congress</p>
+          <p class="text-sm text-steel-600 mt-2">A full day of talks, workshops, and networking for engineers across the region.</p>
+        </div>
+        <div class="rounded-2xl border border-ink/10 p-5 bg-white/50">
+          <p class="text-xs text-steel-500">APR 02, 2026 · ISTANBUL</p>
+          <p class="font-display font-medium mt-1">Structural Design Workshop</p>
+          <p class="text-sm text-steel-600 mt-2">Hands-on session with certified practitioners.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACCREDITATION -->
+  <section id="accreditation" class="py-20 border-b border-ink/10">
+    <div class="max-w-6xl mx-auto px-6">
+      <span class="label-mono">SEC.03 — ACCREDITATION</span>
+      <h2 class="mt-3 font-display text-2xl sm:text-3xl font-medium tracking-tight">Want to run events under IndustrCons?</h2>
+      <p class="mt-3 text-steel-600 max-w-2xl leading-relaxed">
+        Whether you want to license a chapter in your city or propose a single event, it starts
+        with one form. We review every application by hand.
+      </p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href="apply.html?type=license" class="bg-blueprint-500 text-white px-5 py-2.5 rounded-full text-sm font-medium">
+          Apply for a chapter license
+        </a>
+        <a href="apply.html?type=event" class="border border-ink/15 px-5 py-2.5 rounded-full text-sm font-medium">
+          Propose an event
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-10 text-center text-xs text-steel-400">
+    © 2026 IndustrCons Event. All rights reserved.
+  </footer>
+
+</body>
+</html>
