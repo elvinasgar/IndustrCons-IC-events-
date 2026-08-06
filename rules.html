@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="az" data-lang="az">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Qaydalar / Rules — IC Events</title>
+<link rel="icon" href="assets/logo-128.png" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="js/tailwind-config.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-paper text-ink">
+
+  <header class="border-b border-ink/10 sticky top-0 z-30 bg-paper/90 backdrop-blur">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2">
+        <img src="assets/logo-128.png" alt="IC Events" class="h-10 w-10 rounded-full object-cover" />
+        <span class="font-display font-medium tracking-tight">IC Events</span>
+      </a>
+      <nav class="hidden lg:flex items-center gap-6 text-sm text-steel-600">
+        <a href="events.html" class="hover:text-ink"><span class="lang-az">Tədbirlər</span><span class="lang-en">Events</span></a>
+        <a href="license.html" class="hover:text-ink"><span class="lang-az">Lisenziya</span><span class="lang-en">License</span></a>
+        <a href="membership.html" class="hover:text-ink"><span class="lang-az">Üzvlük</span><span class="lang-en">Membership</span></a>
+        <a href="ambassador.html" class="hover:text-ink"><span class="lang-az">Səfirlik</span><span class="lang-en">Ambassador</span></a>
+        <a href="rules.html" class="text-ink font-medium"><span class="lang-az">Qaydalar</span><span class="lang-en">Rules</span></a>
+        <a href="faq.html" class="hover:text-ink">FAQ</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <div class="hidden sm:flex items-center gap-1 text-xs font-mono">
+          <button id="lang-az-btn" onclick="setLang('az')" class="px-1.5 py-1">AZ</button>
+          <span class="text-steel-300">/</span>
+          <button id="lang-en-btn" onclick="setLang('en')" class="px-1.5 py-1">EN</button>
+        </div>
+        <a href="license.html" class="btn-primary hidden md:inline-flex"><span class="lang-az">Müraciət et</span><span class="lang-en">Apply</span> →</a>
+        <button onclick="toggleMobileMenu()" class="lg:hidden p-2" aria-label="Menu">☰</button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="mobile-menu lg:hidden flex-col gap-1 px-6 pb-4 border-t border-ink/10">
+      <a href="events.html" class="py-2 text-sm"><span class="lang-az">Tədbirlər</span><span class="lang-en">Events</span></a>
+      <a href="license.html" class="py-2 text-sm"><span class="lang-az">Lisenziya</span><span class="lang-en">License</span></a>
+      <a href="membership.html" class="py-2 text-sm"><span class="lang-az">Üzvlük</span><span class="lang-en">Membership</span></a>
+      <a href="ambassador.html" class="py-2 text-sm"><span class="lang-az">Səfirlik</span><span class="lang-en">Ambassador</span></a>
+      <a href="rules.html" class="py-2 text-sm"><span class="lang-az">Qaydalar</span><span class="lang-en">Rules</span></a>
+      <a href="faq.html" class="py-2 text-sm">FAQ</a>
+      <a href="contact.html" class="py-2 text-sm"><span class="lang-az">Əlaqə</span><span class="lang-en">Contact</span></a>
+      <div class="flex items-center gap-2 pt-2">
+        <button onclick="setLang('az')" class="text-xs font-mono px-2 py-1 border border-ink/15 rounded-full">AZ</button>
+        <button onclick="setLang('en')" class="text-xs font-mono px-2 py-1 border border-ink/15 rounded-full">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <section class="py-16 border-b border-ink/10">
+    <div class="max-w-2xl mx-auto px-6">
+      <span class="label-mono"><span class="lang-az">TƏDBİR QAYDALARI</span><span class="lang-en">EVENT RULES</span></span>
+      <h1 class="mt-3 font-display text-3xl font-medium tracking-tight">
+        <span class="lang-az">Bir standart, hər yerdə eyni.</span>
+        <span class="lang-en">One standard, everywhere the same.</span>
+      </h1>
+      <p class="mt-3 text-steel-600 leading-relaxed">
+        <span class="lang-az">IC Events adı altında keçirilən hər tədbir aşağıdakı qaydalara ciddi şəkildə əməl etməlidir. Qaydalara əməl olunmaması lisenziyanın ləğvinə səbəb ola bilər.</span>
+        <span class="lang-en">Every event held under the IC Events name must strictly follow the rules below. Non-compliance can result in the license being revoked.</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- DO'S -->
+  <section class="py-14 border-b border-ink/10">
+    <div class="max-w-2xl mx-auto px-6">
+      <p class="label-mono mb-4">✓ <span class="lang-az">ETMƏLİSƏN</span><span class="lang-en">YOU MUST</span></p>
+      <ul class="space-y-3 text-sm text-steel-700">
+        <li class="card"><span class="lang-az">Rəsmi IC Events logosunu dəyişdirilməmiş formada istifadə et.</span><span class="lang-en">Use the official IC Events logo exactly as provided, unaltered.</span></li>
+        <li class="card"><span class="lang-az">Tədbiri əvvəldən sona qədər kamera ilə çək (telefon kifayətdir) — YouTube kanalımıza təqdim etmək üçün.</span><span class="lang-en">Film the event start to finish (a phone camera is enough) — for submission to our YouTube channel.</span></li>
+        <li class="card"><span class="lang-az">Tədbirdən sonra 7 gün ərzində çəkilişi və qısa hesabatı göndər.</span><span class="lang-en">Submit the recording and a short report within 7 days after the event.</span></li>
+        <li class="card"><span class="lang-az">Tədbirin "IC Events lisenziyası altında" keçirildiyini aydın şəkildə bildir.</span><span class="lang-en">Clearly state the event is held "under an IC Events license."</span></li>
+        <li class="card"><span class="lang-az">Bütün tanıtım materiallarını geniş yayımdan əvvəl təsdiqlət.</span><span class="lang-en">Get all promotional materials approved before wide distribution.</span></li>
+        <li class="card"><span class="lang-az">Spikerlərin vaxt limitlərinə hörmət et, mövzuların faktiki və konstruktiv olmasını təmin et.</span><span class="lang-en">Respect speaker time limits, and make sure talks stay factual and constructive.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- DON'TS -->
+  <section class="py-14 border-b border-ink/10">
+    <div class="max-w-2xl mx-auto px-6">
+      <p class="label-mono mb-4">✕ <span class="lang-az">ETMƏMƏLİSƏN</span><span class="lang-en">YOU MUST NOT</span></p>
+      <ul class="space-y-3 text-sm text-steel-700">
+        <li class="card"><span class="lang-az">Tədbirlə əlaqədar heç vaxt "TEDx" və ya başqa üçüncü tərəf brend adından istifadə etmə.</span><span class="lang-en">Never use "TEDx" or any other third-party brand name in connection with the event.</span></li>
+        <li class="card"><span class="lang-az">Logonun rəngini, formasını və ya proporsiyalarını dəyişmə.</span><span class="lang-en">Don't alter the logo's colors, shape, or proportions.</span></li>
+        <li class="card"><span class="lang-az">Əvvəlcədən yazılı təsdiq olmadan iştirakçılardan pul tələb etmə.</span><span class="lang-en">Don't charge participants a fee without prior written approval.</span></li>
+        <li class="card"><span class="lang-az">Sənə verilməyən akkreditasiya səviyyəsini iddia etmə.</span><span class="lang-en">Don't claim an accreditation level that hasn't been granted to you.</span></li>
+        <li class="card"><span class="lang-az">Çıxışları məhsul/xidmət satışına çevirmə — bu icma tədbiridir, reklam meydançası deyil.</span><span class="lang-en">Don't turn talks into product/service sales pitches — this is a community event, not an ad platform.</span></li>
+        <li class="card"><span class="lang-az">Siyasi və ya dini təbliğat aparma.</span><span class="lang-en">Don't use the platform for political or religious advocacy.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- RECORDING GUIDE -->
+  <section class="py-14 border-b border-ink/10">
+    <div class="max-w-2xl mx-auto px-6">
+      <p class="label-mono mb-4">📹 <span class="lang-az">ÇƏKİLİŞ TƏLƏBLƏRİ</span><span class="lang-en">FILMING REQUIREMENTS</span></p>
+      <p class="text-sm text-steel-600 mb-4 leading-relaxed">
+        <span class="lang-az">Peşəkar kamera lazım deyil — sadəcə bunlara diqqət et:</span>
+        <span class="lang-en">A professional camera isn't required — just keep these in mind:</span>
+      </p>
+      <ul class="space-y-2 text-sm text-steel-600">
+        <li class="flex gap-2"><span class="text-blueprint-500">—</span><span><span class="lang-az">Üfüqi (landscape) formatda çək, şaquli yox</span><span class="lang-en">Film in landscape orientation, not vertical</span></span></li>
+        <li class="flex gap-2"><span class="text-blueprint-500">—</span><span><span class="lang-az">Kameranı sabit saxla — üçayaq və ya dayaq istifadə et</span><span class="lang-en">Keep the camera stable — use a tripod or stand</span></span></li>
+        <li class="flex gap-2"><span class="text-blueprint-500">—</span><span><span class="lang-az">Səs aydın olsun — telefon spikerə yaxın olsun və ya xarici mikrofon istifadə et</span><span class="lang-en">Make sure audio is clear — keep the phone close to the speaker or use an external mic</span></span></li>
+        <li class="flex gap-2"><span class="text-blueprint-500">—</span><span><span class="lang-az">Zal yaxşı işıqlandırılmış olsun</span><span class="lang-en">Make sure the room is well-lit</span></span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- VIDEO / BANNER / LOGO USAGE -->
+  <section class="py-14">
+    <div class="max-w-2xl mx-auto px-6">
+      <p class="label-mono mb-4"><span class="lang-az">LOGO, BANNER VƏ VİDEO İSTİFADƏSİ</span><span class="lang-en">LOGO, BANNER & VIDEO USAGE</span></p>
+      <p class="text-sm text-steel-600 leading-relaxed">
+        <span class="lang-az">Rəsmi logo <a href="assets/logo.png" class="text-blueprint-600 font-medium" download>bu linkdən</a> yüklənə bilər. Onu tədbirin girişində banner kimi, çəkilişin əvvəlində intro kimi, yaxud tanıtım materiallarında istifadə edə bilərsən — dəyişdirmədən, ətrafında kifayət qədər boş sahə saxlayaraq.</span>
+        <span class="lang-en">The official logo can be downloaded <a href="assets/logo.png" class="text-blueprint-600 font-medium" download>from this link</a>. You can use it as an entrance banner, a video intro, or on promotional materials — unaltered, with reasonable clear space around it.</span>
+      </p>
+    </div>
+  </section>
+
+  <footer class="border-t border-ink/10 py-10">
+    <div class="max-w-6xl mx-auto px-6 flex flex-wrap items-start justify-between gap-6">
+      <div class="flex items-center gap-2">
+        <img src="assets/logo-128.png" class="h-8 w-8 rounded-full object-cover" alt="IC Events"/>
+        <div>
+          <p class="font-display font-medium text-sm">IC Events</p>
+          <p class="text-xs text-steel-500"><span class="lang-az">Bakı, Azərbaycan · qlobal təşkil olunur</span><span class="lang-en">Baku, Azerbaijan · organized globally</span></p>
+        </div>
+      </div>
+      <div class="flex flex-wrap gap-x-6 gap-y-2 text-xs text-steel-500">
+        <a href="events.html" class="hover:text-ink"><span class="lang-az">Tədbirlər</span><span class="lang-en">Events</span></a>
+        <a href="license.html" class="hover:text-ink"><span class="lang-az">Lisenziya</span><span class="lang-en">License</span></a>
+        <a href="membership.html" class="hover:text-ink"><span class="lang-az">Üzvlük</span><span class="lang-en">Membership</span></a>
+        <a href="ambassador.html" class="hover:text-ink"><span class="lang-az">Səfirlik</span><span class="lang-en">Ambassador</span></a>
+        <a href="rules.html" class="hover:text-ink"><span class="lang-az">Qaydalar</span><span class="lang-en">Rules</span></a>
+        <a href="faq.html" class="hover:text-ink">FAQ</a>
+        <a href="contact.html" class="hover:text-ink"><span class="lang-az">Əlaqə</span><span class="lang-en">Contact</span></a>
+      </div>
+      <div class="flex gap-3">
+        <a href="https://www.linkedin.com/company/industrcons/" target="_blank" rel="noopener noreferrer" class="text-steel-500 hover:text-ink text-xs font-mono border border-ink/15 rounded-full px-3 py-1.5">LinkedIn</a>
+        <a href="https://www.instagram.com/industrcons" target="_blank" rel="noopener noreferrer" class="text-steel-500 hover:text-ink text-xs font-mono border border-ink/15 rounded-full px-3 py-1.5">Instagram</a>
+      </div>
+    </div>
+    <div class="max-w-6xl mx-auto px-6 mt-8 pt-6 border-t border-ink/5 text-xs text-steel-400">
+      © 2026 IC Events by IndustrCons. <span class="lang-az">Bütün hüquqlar qorunur.</span><span class="lang-en">All rights reserved.</span>
+    </div>
+  </footer>
+
+  <script src="js/site.js"></script>
+</body>
+</html>
