@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="az" data-lang="az">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Üzvlük / Membership — IC Events</title>
+<link rel="icon" href="assets/logo-128.png" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="js/tailwind-config.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-paper text-ink">
+
+  <header class="border-b border-ink/10 sticky top-0 z-30 bg-paper/90 backdrop-blur">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2">
+        <img src="assets/logo-128.png" alt="IC Events" class="h-10 w-10 rounded-full object-cover" />
+        <span class="font-display font-medium tracking-tight">IC Events</span>
+      </a>
+      <nav class="hidden lg:flex items-center gap-6 text-sm text-steel-600">
+        <a href="events.html" class="hover:text-ink"><span class="lang-az">Tədbirlər</span><span class="lang-en">Events</span></a>
+        <a href="license.html" class="hover:text-ink"><span class="lang-az">Lisenziya</span><span class="lang-en">License</span></a>
+        <a href="membership.html" class="text-ink font-medium"><span class="lang-az">Üzvlük</span><span class="lang-en">Membership</span></a>
+        <a href="ambassador.html" class="hover:text-ink"><span class="lang-az">Səfirlik</span><span class="lang-en">Ambassador</span></a>
+        <a href="rules.html" class="hover:text-ink"><span class="lang-az">Qaydalar</span><span class="lang-en">Rules</span></a>
+        <a href="organizers.html" class="hover:text-ink"><span class="lang-az">Təşkilatçılar</span><span class="lang-en">Organizers</span></a>
+        <a href="faq.html" class="hover:text-ink">FAQ</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <div class="hidden sm:flex items-center gap-1 text-xs font-mono">
+          <button id="lang-az-btn" onclick="setLang('az')" class="px-1.5 py-1">AZ</button>
+          <span class="text-steel-300">/</span>
+          <button id="lang-en-btn" onclick="setLang('en')" class="px-1.5 py-1">EN</button>
+        </div>
+        <button onclick="toggleMobileMenu()" class="lg:hidden p-2" aria-label="Menu">☰</button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="mobile-menu lg:hidden flex-col gap-1 px-6 pb-4 border-t border-ink/10">
+      <a href="events.html" class="py-2 text-sm"><span class="lang-az">Tədbirlər</span><span class="lang-en">Events</span></a>
+      <a href="license.html" class="py-2 text-sm"><span class="lang-az">Lisenziya</span><span class="lang-en">License</span></a>
+      <a href="membership.html" class="py-2 text-sm"><span class="lang-az">Üzvlük</span><span class="lang-en">Membership</span></a>
+      <a href="ambassador.html" class="py-2 text-sm"><span class="lang-az">Səfirlik</span><span class="lang-en">Ambassador</span></a>
+      <a href="rules.html" class="py-2 text-sm"><span class="lang-az">Qaydalar</span><span class="lang-en">Rules</span></a>
+      <a href="organizers.html" class="py-2 text-sm"><span class="lang-az">Təşkilatçılar</span><span class="lang-en">Organizers</span></a>
+      <a href="faq.html" class="py-2 text-sm">FAQ</a>
+      <a href="contact.html" class="py-2 text-sm"><span class="lang-az">Əlaqə</span><span class="lang-en">Contact</span></a>
+      <div class="flex items-center gap-2 pt-2">
+        <button onclick="setLang('az')" class="text-xs font-mono px-2 py-1 border border-ink/15 rounded-full">AZ</button>
+        <button onclick="setLang('en')" class="text-xs font-mono px-2 py-1 border border-ink/15 rounded-full">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <section class="py-16 border-b border-ink/10">
+    <div class="max-w-2xl mx-auto px-6">
+      <span class="label-mono"><span class="lang-az">ÜZVLÜK</span><span class="lang-en">MEMBERSHIP</span></span>
+      <h1 class="mt-3 font-display text-3xl font-medium tracking-tight">
+        <span class="lang-az">İcmanın daimi hissəsi ol.</span>
+        <span class="lang-en">Become a permanent part of the community.</span>
+      </h1>
+      <p class="mt-3 text-steel-600 leading-relaxed">
+        <span class="lang-az">Üzvlük — tək bir tədbirdən daha çoxudur. Davamlı olaraq tədbirlərə önləmli girişi, icma daxilində tanınmanı və IC Events şəbəkəsinə çıxışı əhatə edir.</span>
+        <span class="lang-en">Membership is more than a single event. It means ongoing priority access to events, recognition within the community, and access to the IC Events network.</span>
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 border-b border-ink/10">
+    <div class="max-w-2xl mx-auto px-6">
+      <p class="label-mono mb-4"><span class="lang-az">ÜSTÜNLÜKLƏR</span><span class="lang-en">BENEFITS</span></p>
+      <div class="grid gap-3 sm:grid-cols-2">
+        <div class="card">
+          <p class="font-display font-medium"><span class="lang-az">Önləmli giriş</span><span class="lang-en">Priority access</span></p>
+          <p class="text-sm text-steel-600 mt-1"><span class="lang-az">Yeni tədbirlər elan olunanda ilk sən bilirsən.</span><span class="lang-en">You hear about new events first.</span></p>
+        </div>
+        <div class="card">
+          <p class="font-display font-medium"><span class="lang-az">Şəbəkə</span><span class="lang-en">Network</span></p>
+          <p class="text-sm text-steel-600 mt-1"><span class="lang-az">Digər üzvlər, təşkilatçılar və spikerlərlə əlaqə.</span><span class="lang-en">Direct connection to other members, organizers, and speakers.</span></p>
+        </div>
+        <div class="card">
+          <p class="font-display font-medium"><span class="lang-az">Danışmaq imkanı</span><span class="lang-en">Speaking opportunities</span></p>
+          <p class="text-sm text-steel-600 mt-1"><span class="lang-az">Tədbirlərdə spiker kimi çıxış etmək şansı.</span><span class="lang-en">A chance to speak at events as a presenter.</span></p>
+        </div>
+        <div class="card">
+          <p class="font-display font-medium"><span class="lang-az">Tanınma</span><span class="lang-en">Recognition</span></p>
+          <p class="text-sm text-steel-600 mt-1"><span class="lang-az">Töhfələrin icma daxilində qeyd olunur.</span><span class="lang-en">Your contributions are acknowledged within the community.</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="max-w-2xl mx-auto px-6">
+      <p class="label-mono mb-3">
+        <span class="lang-az">ÜZVLÜK ŞABLONU — DÜZƏLİŞ ET</span>
+        <span class="lang-en">MEMBERSHIP TEMPLATE — EDIT IT</span>
+      </p>
+      <p class="text-sm text-steel-600 mb-4">
+        <span class="lang-az">"..." yerlərini öz məlumatınla doldur, sonra Gmail-də aç.</span>
+        <span class="lang-en">Fill in the "..." placeholders, then open in Gmail.</span>
+      </p>
+
+      <div id="membership-template-box" class="template-box"></div>
+
+      <div class="mt-4 flex flex-wrap gap-3">
+        <a id="membership-gmail-btn" href="#" class="btn-primary">
+          <span class="lang-az">Gmail-də aç və göndər</span><span class="lang-en">Open in Gmail and send</span> →
+        </a>
+        <button id="membership-copy-btn" type="button" class="btn-outline">
+          <span class="lang-az">Şablonu kopyala</span><span class="lang-en">Copy template</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <footer class="border-t border-ink/10 py-10">
+    <div class="max-w-6xl mx-auto px-6 flex flex-wrap items-start justify-between gap-6">
+      <div class="flex items-center gap-2">
+        <img src="assets/logo-128.png" class="h-8 w-8 rounded-full object-cover" alt="IC Events"/>
+        <div>
+          <p class="font-display font-medium text-sm">IC Events</p>
+          <p class="text-xs text-steel-500"><span class="lang-az">Bakı, Azərbaycan · qlobal təşkil olunur</span><span class="lang-en">Baku, Azerbaijan · organized globally</span></p>
+        </div>
+      </div>
+      <div class="flex flex-wrap gap-x-6 gap-y-2 text-xs text-steel-500">
+        <a href="events.html" class="hover:text-ink"><span class="lang-az">Tədbirlər</span><span class="lang-en">Events</span></a>
+        <a href="license.html" class="hover:text-ink"><span class="lang-az">Lisenziya</span><span class="lang-en">License</span></a>
+        <a href="membership.html" class="hover:text-ink"><span class="lang-az">Üzvlük</span><span class="lang-en">Membership</span></a>
+        <a href="ambassador.html" class="hover:text-ink"><span class="lang-az">Səfirlik</span><span class="lang-en">Ambassador</span></a>
+        <a href="rules.html" class="hover:text-ink"><span class="lang-az">Qaydalar</span><span class="lang-en">Rules</span></a>
+        <a href="organizers.html" class="hover:text-ink"><span class="lang-az">Təşkilatçılar</span><span class="lang-en">Organizers</span></a>
+        <a href="faq.html" class="hover:text-ink">FAQ</a>
+        <a href="contact.html" class="hover:text-ink"><span class="lang-az">Əlaqə</span><span class="lang-en">Contact</span></a>
+      </div>
+      <div class="flex gap-3">
+        <a href="https://www.linkedin.com/company/industrcons/" target="_blank" rel="noopener noreferrer" class="text-steel-500 hover:text-ink text-xs font-mono border border-ink/15 rounded-full px-3 py-1.5">LinkedIn</a>
+        <a href="https://www.instagram.com/industrcons" target="_blank" rel="noopener noreferrer" class="text-steel-500 hover:text-ink text-xs font-mono border border-ink/15 rounded-full px-3 py-1.5">Instagram</a>
+      </div>
+    </div>
+    <div class="max-w-6xl mx-auto px-6 mt-8 pt-6 border-t border-ink/5 text-xs text-steel-400">
+      © 2026 IC Events by IndustrCons. <span class="lang-az">Bütün hüquqlar qorunur.</span><span class="lang-en">All rights reserved.</span>
+    </div>
+  </footer>
+
+  <script src="js/site.js"></script>
+  <script>
+    var MEMBERSHIP_BODY_AZ = [
+      'Salam IC Events komandası,',
+      '',
+      'Üzv olmaq istəyirəm.',
+      '',
+      '- Ad, soyad: ...',
+      '- Email: ...',
+      '- Şəhər / Region: ...',
+      '- Sahə / peşə: ...',
+      '- Universitet / şirkət (varsa): ...',
+      '- Niyə üzv olmaq istəyirəm: ...',
+      '',
+      'Təşəkkürlər,',
+      '[Adınız]',
+    ].join('\n');
+
+    var MEMBERSHIP_BODY_EN = [
+      'Hello IC Events team,',
+      '',
+      'I would like to become a member.',
+      '',
+      '- Full name: ...',
+      '- Email: ...',
+      '- City / Region: ...',
+      '- Field / profession: ...',
+      '- University / company (if any): ...',
+      '- Why I want to join: ...',
+      '',
+      'Thank you,',
+      '[Your name]',
+    ].join('\n');
+
+    setupApplicationTemplate({
+      to: 'industrcons@gmail.com',
+      subjectAz: 'Üzvlük Müraciəti',
+      subjectEn: 'Membership Application',
+      bodyAz: MEMBERSHIP_BODY_AZ,
+      bodyEn: MEMBERSHIP_BODY_EN,
+      boxId: 'membership-template-box',
+      gmailBtnId: 'membership-gmail-btn',
+      copyBtnId: 'membership-copy-btn',
+    });
+  </script>
+</body>
+</html>

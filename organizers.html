@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="az" data-lang="az">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Təşkilatçılar / Organizers — IC Events</title>
+<link rel="icon" href="assets/logo-128.png" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="js/tailwind-config.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-paper text-ink">
+
+  <header class="border-b border-ink/10 sticky top-0 z-30 bg-paper/90 backdrop-blur">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2">
+        <img src="assets/logo-128.png" alt="IC Events" class="h-10 w-10 rounded-full object-cover" />
+        <span class="font-display font-medium tracking-tight">IC Events</span>
+      </a>
+      <nav class="hidden lg:flex items-center gap-6 text-sm text-steel-600">
+        <a href="events.html" class="hover:text-ink"><span class="lang-az">Tədbirlər</span><span class="lang-en">Events</span></a>
+        <a href="license.html" class="hover:text-ink"><span class="lang-az">Lisenziya</span><span class="lang-en">License</span></a>
+        <a href="membership.html" class="hover:text-ink"><span class="lang-az">Üzvlük</span><span class="lang-en">Membership</span></a>
+        <a href="ambassador.html" class="hover:text-ink"><span class="lang-az">Səfirlik</span><span class="lang-en">Ambassador</span></a>
+        <a href="rules.html" class="hover:text-ink"><span class="lang-az">Qaydalar</span><span class="lang-en">Rules</span></a>
+        <a href="organizers.html" class="text-ink font-medium"><span class="lang-az">Təşkilatçılar</span><span class="lang-en">Organizers</span></a>
+        <a href="faq.html" class="hover:text-ink">FAQ</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <div class="hidden sm:flex items-center gap-1 text-xs font-mono">
+          <button id="lang-az-btn" onclick="setLang('az')" class="px-1.5 py-1">AZ</button>
+          <span class="text-steel-300">/</span>
+          <button id="lang-en-btn" onclick="setLang('en')" class="px-1.5 py-1">EN</button>
+        </div>
+        <a href="license.html" class="btn-primary hidden md:inline-flex"><span class="lang-az">Müraciət et</span><span class="lang-en">Apply</span> →</a>
+        <button onclick="toggleMobileMenu()" class="lg:hidden p-2" aria-label="Menu">☰</button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="mobile-menu lg:hidden flex-col gap-1 px-6 pb-4 border-t border-ink/10">
+      <a href="events.html" class="py-2 text-sm"><span class="lang-az">Tədbirlər</span><span class="lang-en">Events</span></a>
+      <a href="license.html" class="py-2 text-sm"><span class="lang-az">Lisenziya</span><span class="lang-en">License</span></a>
+      <a href="membership.html" class="py-2 text-sm"><span class="lang-az">Üzvlük</span><span class="lang-en">Membership</span></a>
+      <a href="ambassador.html" class="py-2 text-sm"><span class="lang-az">Səfirlik</span><span class="lang-en">Ambassador</span></a>
+      <a href="rules.html" class="py-2 text-sm"><span class="lang-az">Qaydalar</span><span class="lang-en">Rules</span></a>
+      <a href="organizers.html" class="py-2 text-sm"><span class="lang-az">Təşkilatçılar</span><span class="lang-en">Organizers</span></a>
+      <a href="faq.html" class="py-2 text-sm">FAQ</a>
+      <a href="contact.html" class="py-2 text-sm"><span class="lang-az">Əlaqə</span><span class="lang-en">Contact</span></a>
+      <div class="flex items-center gap-2 pt-2">
+        <button onclick="setLang('az')" class="text-xs font-mono px-2 py-1 border border-ink/15 rounded-full">AZ</button>
+        <button onclick="setLang('en')" class="text-xs font-mono px-2 py-1 border border-ink/15 rounded-full">EN</button>
+      </div>
+      <a href="license.html" class="btn-primary justify-center mt-2"><span class="lang-az">Müraciət et</span><span class="lang-en">Apply</span></a>
+    </div>
+  </header>
+
+  <section class="py-16 border-b border-ink/10">
+    <div class="max-w-2xl mx-auto px-6">
+      <span class="label-mono"><span class="lang-az">TƏŞKİLATÇILAR</span><span class="lang-en">ORGANIZERS</span></span>
+      <h1 class="mt-3 font-display text-3xl font-medium tracking-tight">
+        <span class="lang-az">Tədbir keçirənlər burada tanınır.</span>
+        <span class="lang-en">The people behind the events get recognized here.</span>
+      </h1>
+      <p class="mt-3 text-steel-600 leading-relaxed">
+        <span class="lang-az">Bir tədbir keçirdikdə, adın, şəklin və keçirdiyin tədbirlər siyahısı bu səhifəyə əlavə olunur — özünü və işini tanıtmaq üçün daimi bir vitrin.</span>
+        <span class="lang-en">Once you organize an event, your name, photo, and the list of events you've run get added to this page — a permanent showcase for you and your work.</span>
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 border-b border-ink/10">
+    <div class="max-w-2xl mx-auto px-6">
+      <p class="label-mono mb-4"><span class="lang-az">NİYƏ TƏŞKİLATÇI OLMALISAN</span><span class="lang-en">WHY BECOME AN ORGANIZER</span></p>
+      <div class="grid gap-3 sm:grid-cols-2">
+        <div class="card">
+          <p class="font-display font-medium"><span class="lang-az">Görünürlük</span><span class="lang-en">Visibility</span></p>
+          <p class="text-sm text-steel-600 mt-1"><span class="lang-az">Adın və şəklin bu səhifədə, tədbirin isə YouTube kanalımızda qalır.</span><span class="lang-en">Your name and photo stay on this page, your event stays on our YouTube channel.</span></p>
+        </div>
+        <div class="card">
+          <p class="font-display font-medium"><span class="lang-az">Şəbəkə</span><span class="lang-en">Network</span></p>
+          <p class="text-sm text-steel-600 mt-1"><span class="lang-az">Digər təşkilatçılar, spikerlər və tərəfdaşlarla birbaşa əlaqə.</span><span class="lang-en">Direct connection to other organizers, speakers, and partners.</span></p>
+        </div>
+        <div class="card">
+          <p class="font-display font-medium"><span class="lang-az">Sadəlik</span><span class="lang-en">Simplicity</span></p>
+          <p class="text-sm text-steel-600 mt-1"><span class="lang-az">Brend, format və qaydalar hazırdır — sənə sadəcə məkan və spikerlər lazımdır.</span><span class="lang-en">The brand, format, and rules are ready-made — you just need a venue and speakers.</span></p>
+        </div>
+        <div class="card">
+          <p class="font-display font-medium"><span class="lang-az">Karyera</span><span class="lang-en">Career</span></p>
+          <p class="text-sm text-steel-600 mt-1"><span class="lang-az">Tədbir təşkilatçılığı təcrübəsi — CV-də, LinkedIn-də göstərilə bilən konkret nəticə.</span><span class="lang-en">Event organizing experience — a concrete result you can put on your CV or LinkedIn.</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 border-b border-ink/10">
+    <div class="max-w-2xl mx-auto px-6">
+      <p class="label-mono mb-2"><span class="lang-az">NÜMUNƏ KART</span><span class="lang-en">EXAMPLE CARD</span></p>
+      <p class="text-xs text-steel-400 mb-4">
+        <span class="lang-az">(Bu, bir nümunədir — birinci tədbirini təşkil edən kimi öz kartın buraya əlavə olunacaq)</span>
+        <span class="lang-en">(This is a placeholder — once you organize your first event, your own card gets added here)</span>
+      </p>
+
+      <div class="card flex items-start gap-4 max-w-md">
+        <div class="h-16 w-16 rounded-full bg-blueprint-500/10 border border-blueprint-500/30 flex items-center justify-center text-blueprint-600 font-display font-medium text-lg shrink-0">
+          <span class="lang-az">SƏN</span><span class="lang-en">YOU</span>
+        </div>
+        <div>
+          <p class="font-display font-medium">
+            <span class="lang-az">Adın Soyadın</span><span class="lang-en">Your Name</span>
+          </p>
+          <p class="text-xs text-steel-500 mt-0.5">
+            <span class="lang-az">Şəhər, Ölkə</span><span class="lang-en">City, Country</span>
+          </p>
+          <div class="flex flex-wrap gap-1.5 mt-3">
+            <span class="badge badge-outline">
+              <span class="lang-az">İlk tədbirini gözləyirik</span><span class="lang-en">Waiting for your first event</span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="max-w-2xl mx-auto px-6 text-center">
+      <h2 class="font-display text-2xl font-medium tracking-tight">
+        <span class="lang-az">Növbəti kart sənin ola bilər.</span>
+        <span class="lang-en">The next card could be yours.</span>
+      </h2>
+      <a href="license.html" class="btn-primary mt-6 inline-flex">
+        <span class="lang-az">İlk tədbirini təşkil et</span><span class="lang-en">Organize your first event</span> →
+      </a>
+    </div>
+  </section>
+
+  <footer class="border-t border-ink/10 py-10">
+    <div class="max-w-6xl mx-auto px-6 flex flex-wrap items-start justify-between gap-6">
+      <div class="flex items-center gap-2">
+        <img src="assets/logo-128.png" class="h-8 w-8 rounded-full object-cover" alt="IC Events"/>
+        <div>
+          <p class="font-display font-medium text-sm">IC Events</p>
+          <p class="text-xs text-steel-500"><span class="lang-az">Bakı, Azərbaycan · qlobal təşkil olunur</span><span class="lang-en">Baku, Azerbaijan · organized globally</span></p>
+        </div>
+      </div>
+      <div class="flex flex-wrap gap-x-6 gap-y-2 text-xs text-steel-500">
+        <a href="events.html" class="hover:text-ink"><span class="lang-az">Tədbirlər</span><span class="lang-en">Events</span></a>
+        <a href="license.html" class="hover:text-ink"><span class="lang-az">Lisenziya</span><span class="lang-en">License</span></a>
+        <a href="membership.html" class="hover:text-ink"><span class="lang-az">Üzvlük</span><span class="lang-en">Membership</span></a>
+        <a href="ambassador.html" class="hover:text-ink"><span class="lang-az">Səfirlik</span><span class="lang-en">Ambassador</span></a>
+        <a href="rules.html" class="hover:text-ink"><span class="lang-az">Qaydalar</span><span class="lang-en">Rules</span></a>
+        <a href="organizers.html" class="hover:text-ink"><span class="lang-az">Təşkilatçılar</span><span class="lang-en">Organizers</span></a>
+        <a href="faq.html" class="hover:text-ink">FAQ</a>
+        <a href="contact.html" class="hover:text-ink"><span class="lang-az">Əlaqə</span><span class="lang-en">Contact</span></a>
+      </div>
+      <div class="flex gap-3">
+        <a href="https://www.linkedin.com/company/industrcons/" target="_blank" rel="noopener noreferrer" class="text-steel-500 hover:text-ink text-xs font-mono border border-ink/15 rounded-full px-3 py-1.5">LinkedIn</a>
+        <a href="https://www.instagram.com/industrcons" target="_blank" rel="noopener noreferrer" class="text-steel-500 hover:text-ink text-xs font-mono border border-ink/15 rounded-full px-3 py-1.5">Instagram</a>
+      </div>
+    </div>
+    <div class="max-w-6xl mx-auto px-6 mt-8 pt-6 border-t border-ink/5 text-xs text-steel-400">
+      © 2026 IC Events by IndustrCons. <span class="lang-az">Bütün hüquqlar qorunur.</span><span class="lang-en">All rights reserved.</span>
+    </div>
+  </footer>
+
+  <script src="js/site.js"></script>
+</body>
+</html>

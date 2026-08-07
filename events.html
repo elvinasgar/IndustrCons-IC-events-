@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="az" data-lang="az">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tədbirlər / Events — IC Events</title>
+<link rel="icon" href="assets/logo-128.png" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="js/tailwind-config.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-paper text-ink">
+
+  <header class="border-b border-ink/10 sticky top-0 z-30 bg-paper/90 backdrop-blur">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2">
+        <img src="assets/logo-128.png" alt="IC Events" class="h-10 w-10 rounded-full object-cover" />
+        <span class="font-display font-medium tracking-tight">IC Events</span>
+      </a>
+      <nav class="hidden lg:flex items-center gap-6 text-sm text-steel-600">
+        <a href="events.html" class="text-ink font-medium"><span class="lang-az">Tədbirlər</span><span class="lang-en">Events</span></a>
+        <a href="license.html" class="hover:text-ink"><span class="lang-az">Lisenziya</span><span class="lang-en">License</span></a>
+        <a href="membership.html" class="hover:text-ink"><span class="lang-az">Üzvlük</span><span class="lang-en">Membership</span></a>
+        <a href="ambassador.html" class="hover:text-ink"><span class="lang-az">Səfirlik</span><span class="lang-en">Ambassador</span></a>
+        <a href="rules.html" class="hover:text-ink"><span class="lang-az">Qaydalar</span><span class="lang-en">Rules</span></a>
+        <a href="organizers.html" class="hover:text-ink"><span class="lang-az">Təşkilatçılar</span><span class="lang-en">Organizers</span></a>
+        <a href="faq.html" class="hover:text-ink">FAQ</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <div class="hidden sm:flex items-center gap-1 text-xs font-mono">
+          <button id="lang-az-btn" onclick="setLang('az')" class="px-1.5 py-1">AZ</button>
+          <span class="text-steel-300">/</span>
+          <button id="lang-en-btn" onclick="setLang('en')" class="px-1.5 py-1">EN</button>
+        </div>
+        <a href="license.html" class="btn-primary hidden md:inline-flex"><span class="lang-az">Müraciət et</span><span class="lang-en">Apply</span> →</a>
+        <button onclick="toggleMobileMenu()" class="lg:hidden p-2" aria-label="Menu">☰</button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="mobile-menu lg:hidden flex-col gap-1 px-6 pb-4 border-t border-ink/10">
+      <a href="events.html" class="py-2 text-sm"><span class="lang-az">Tədbirlər</span><span class="lang-en">Events</span></a>
+      <a href="license.html" class="py-2 text-sm"><span class="lang-az">Lisenziya</span><span class="lang-en">License</span></a>
+      <a href="membership.html" class="py-2 text-sm"><span class="lang-az">Üzvlük</span><span class="lang-en">Membership</span></a>
+      <a href="ambassador.html" class="py-2 text-sm"><span class="lang-az">Səfirlik</span><span class="lang-en">Ambassador</span></a>
+      <a href="rules.html" class="py-2 text-sm"><span class="lang-az">Qaydalar</span><span class="lang-en">Rules</span></a>
+      <a href="organizers.html" class="py-2 text-sm"><span class="lang-az">Təşkilatçılar</span><span class="lang-en">Organizers</span></a>
+      <a href="faq.html" class="py-2 text-sm">FAQ</a>
+      <a href="contact.html" class="py-2 text-sm"><span class="lang-az">Əlaqə</span><span class="lang-en">Contact</span></a>
+      <div class="flex items-center gap-2 pt-2">
+        <button onclick="setLang('az')" class="text-xs font-mono px-2 py-1 border border-ink/15 rounded-full">AZ</button>
+        <button onclick="setLang('en')" class="text-xs font-mono px-2 py-1 border border-ink/15 rounded-full">EN</button>
+      </div>
+      <a href="license.html" class="btn-primary justify-center mt-2"><span class="lang-az">Müraciət et</span><span class="lang-en">Apply</span></a>
+    </div>
+  </header>
+
+  <section class="py-16 border-b border-ink/10">
+    <div class="max-w-6xl mx-auto px-6">
+      <span class="label-mono"><span class="lang-az">TƏDBİR FORMATLARI</span><span class="lang-en">EVENT FORMATS</span></span>
+      <h1 class="mt-3 font-display text-3xl sm:text-4xl font-medium tracking-tight">
+        <span class="lang-az">İstənilən yerdə, bir neçə formatda</span>
+        <span class="lang-en">Anywhere, in several formats</span>
+      </h1>
+      <p class="mt-3 text-steel-600 max-w-2xl leading-relaxed">
+        <span class="lang-az">Kökümüz mühəndislikdədir, amma digər sahələrdən də müraciətlərə açığıq. Aşağıda formatları və real tədbirlərimizi görə bilərsən.</span>
+        <span class="lang-en">Our roots are in engineering, but we're open to applications from other fields too. Below you'll find the formats and our real events.</span>
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 border-b border-ink/10">
+    <div class="max-w-6xl mx-auto px-6 grid gap-5 sm:grid-cols-2">
+
+      <div class="card">
+        <span class="badge badge-blueprint"><span class="lang-az">STANDART</span><span class="lang-en">STANDARD</span></span>
+        <p class="font-display font-medium mt-3 text-lg"><span class="lang-az">Şirkət tədbiri</span><span class="lang-en">Company event</span></p>
+        <p class="text-sm text-steel-600 mt-2 leading-relaxed">
+          <span class="lang-az">Şirkətin ofisində və ya konfrans zalında keçirilir. Komandanızı, layihələrinizi göstərmək və sənaye ilə əlaqə qurmaq üçün əladır.</span>
+          <span class="lang-en">Held at a company's office or conference room. Great for showcasing your team, your projects, and building industry connections.</span>
+        </p>
+      </div>
+
+      <div class="card">
+        <span class="badge badge-blueprint"><span class="lang-az">STANDART</span><span class="lang-en">STANDARD</span></span>
+        <p class="font-display font-medium mt-3 text-lg"><span class="lang-az">Universitet tədbiri</span><span class="lang-en">University event</span></p>
+        <p class="text-sm text-steel-600 mt-2 leading-relaxed">
+          <span class="lang-az">Kampusda, auditoriyada — tələbələri sənaye mütəxəssisləri ilə bir araya gətirir.</span>
+          <span class="lang-en">On campus, in an auditorium — brings students together with industry professionals.</span>
+        </p>
+      </div>
+
+      <div class="card">
+        <span class="badge badge-blueprint"><span class="lang-az">STANDART</span><span class="lang-en">STANDARD</span></span>
+        <p class="font-display font-medium mt-3 text-lg"><span class="lang-az">Açıq məkan / küçə tədbiri</span><span class="lang-en">Public space / street event</span></p>
+        <p class="text-sm text-steel-600 mt-2 leading-relaxed">
+          <span class="lang-az">İcma mərkəzi, park, meydança — daha geniş, qeyri-rəsmi auditoriya üçün.</span>
+          <span class="lang-en">A community center, park, or square — for a broader, informal audience.</span>
+        </p>
+      </div>
+
+      <div class="card">
+        <span class="badge badge-green"><span class="lang-az">YENİ</span><span class="lang-en">NEW</span></span>
+        <p class="font-display font-medium mt-3 text-lg">Green Events</p>
+        <p class="text-sm text-steel-600 mt-2 leading-relaxed">
+          <span class="lang-az">Davamlılıq, bərpa olunan enerji, ətraf mühitə həssas mühəndislik həllərinə həsr olunub. İstənilən yuxarıdakı məkanda təşkil oluna bilər.</span>
+          <span class="lang-en">Dedicated to sustainability, renewable energy, and environmentally conscious engineering. Can be hosted in any of the venues above.</span>
+        </p>
+      </div>
+
+      <div class="card">
+        <span class="badge badge-outline"><span class="lang-az">VİRTUAL</span><span class="lang-en">VIRTUAL</span></span>
+        <p class="font-display font-medium mt-3 text-lg">Podcast</p>
+        <p class="text-sm text-steel-600 mt-2 leading-relaxed">
+          <span class="lang-az">Söhbət formatında, qeydə alınan epizodlar. Mütəxəssislərlə dərin müsahibələr — YouTube kanalımızda yayımlanır.</span>
+          <span class="lang-en">Conversational, recorded episodes. In-depth interviews with practitioners — published on our YouTube channel.</span>
+        </p>
+      </div>
+
+      <div class="card">
+        <span class="badge badge-outline"><span class="lang-az">VİRTUAL</span><span class="lang-en">VIRTUAL</span></span>
+        <p class="font-display font-medium mt-3 text-lg"><span class="lang-az">Vebinar</span><span class="lang-en">Webinar</span></p>
+        <p class="text-sm text-steel-600 mt-2 leading-relaxed">
+          <span class="lang-az">Onlayn təqdimat və müzakirə — coğrafi məhdudiyyət olmadan istənilən sahə üzrə keçirilə bilər.</span>
+          <span class="lang-en">Online presentation and discussion — no geographic limit, covering any field.</span>
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- EVENTS (real) -->
+  <section class="py-16 border-b border-ink/10">
+    <div class="max-w-6xl mx-auto px-6">
+      <span class="label-mono"><span class="lang-az">TƏDBİRLƏR</span><span class="lang-en">EVENTS</span></span>
+      <h2 class="mt-3 font-display text-2xl font-medium tracking-tight">
+        <span class="lang-az">Keçmiş və yaxınlaşan tədbirlər</span>
+        <span class="lang-en">Past and upcoming events</span>
+      </h2>
+
+      <div class="mt-6 grid gap-5 sm:grid-cols-2">
+
+        <div class="card">
+          <div class="flex items-start justify-between gap-3">
+            <span class="badge badge-signal"><span class="pulse-dot"></span><span class="lang-az">YAXINLAŞIR</span><span class="lang-en">UPCOMING</span></span>
+            <span class="text-xs text-steel-500 font-mono">15.08.2026 · <span class="lang-az">BAKI</span><span class="lang-en">BAKU</span></span>
+          </div>
+          <p class="font-display font-medium mt-3 text-lg">
+            <span class="lang-az">Mühəndislikdə İnnovasiya Görüşü — II</span>
+            <span class="lang-en">Innovation in Engineering Meetup — II</span>
+          </p>
+          <p class="text-sm text-steel-600 mt-2 leading-relaxed">
+            <span class="lang-az">[Tədbirin təsviri buraya — mövzu, məkan, qeydiyyat detalları] — düzəliş et.</span>
+            <span class="lang-en">[Event description goes here — topic, venue, registration details] — edit this.</span>
+          </p>
+          <div class="grid grid-cols-2 gap-3 mt-4">
+            <div class="rounded-lg border border-ink/10 p-3 text-center">
+              <p class="font-mono text-xl font-medium">30</p>
+              <p class="text-[11px] text-steel-500 mt-0.5"><span class="lang-az">İştirakçı (planlaşdırılan)</span><span class="lang-en">Participants (planned)</span></p>
+            </div>
+            <div class="rounded-lg border border-ink/10 p-3 text-center">
+              <p class="font-mono text-xl font-medium">4</p>
+              <p class="text-[11px] text-steel-500 mt-0.5"><span class="lang-az">Spiker</span><span class="lang-en">Speakers</span></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="flex items-start justify-between gap-3">
+            <span class="badge badge-outline"><span class="lang-az">KEÇMİŞ</span><span class="lang-en">PAST</span></span>
+            <span class="text-xs text-steel-500 font-mono"><span class="lang-az">BAKI, AZƏRBAYCAN</span><span class="lang-en">BAKU, AZERBAIJAN</span></span>
+          </div>
+          <p class="font-display font-medium mt-3 text-lg">
+            <span class="lang-az">Mühəndislikdə İnnovasiya Görüşü</span>
+            <span class="lang-en">Innovation in Engineering Meetup</span>
+          </p>
+          <p class="text-sm text-steel-600 mt-2 leading-relaxed">
+            <span class="lang-az">MÜSİAD ilə birgə keçirilən görüş — 4 spiker, açıq müzakirə formatı.</span>
+            <span class="lang-en">Held in partnership with MÜSİAD — 4 speakers, open discussion format.</span>
+          </p>
+          <div class="grid grid-cols-2 gap-3 mt-4">
+            <div class="rounded-lg border border-ink/10 p-3 text-center">
+              <p class="font-mono text-xl font-medium">30</p>
+              <p class="text-[11px] text-steel-500 mt-0.5"><span class="lang-az">İştirakçı</span><span class="lang-en">Participants</span></p>
+            </div>
+            <div class="rounded-lg border border-ink/10 p-3 text-center">
+              <p class="font-mono text-xl font-medium">4</p>
+              <p class="text-[11px] text-steel-500 mt-0.5"><span class="lang-az">Spiker</span><span class="lang-en">Speakers</span></p>
+            </div>
+          </div>
+          <p class="text-xs text-steel-400 mt-3"><span class="lang-az">Tərəfdaş: MÜSİAD</span><span class="lang-en">Partner: MÜSİAD</span></p>
+        </div>
+
+      </div>
+
+      <div class="mt-8">
+        <a href="organizers.html" class="btn-outline"><span class="lang-az">Bu tədbirləri kim təşkil edib?</span><span class="lang-en">Who organized these?</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- RECORDING NOTE -->
+  <section class="py-16">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="card max-w-2xl">
+        <p class="font-display font-medium text-lg">
+          <span class="lang-az">📹 Bütün tədbirlər çəkilməlidir</span>
+          <span class="lang-en">📹 All events must be filmed</span>
+        </p>
+        <p class="text-sm text-steel-600 mt-3 leading-relaxed">
+          <span class="lang-az">Hər tədbir kamera (telefon kifayətdir) ilə çəkilir və IC Events YouTube kanalında yayımlanmaq üçün göndərilir. Ətraflı tələblər Qaydalar səhifəsindədir.</span>
+          <span class="lang-en">Every event is filmed (a phone camera is enough) and submitted for publishing on the IC Events YouTube channel. Full requirements are on the Rules page.</span>
+        </p>
+        <a href="rules.html" class="btn-outline mt-4 w-fit"><span class="lang-az">Qaydalara bax</span><span class="lang-en">See the rules</span> →</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="border-t border-ink/10 py-10">
+    <div class="max-w-6xl mx-auto px-6 flex flex-wrap items-start justify-between gap-6">
+      <div class="flex items-center gap-2">
+        <img src="assets/logo-128.png" class="h-8 w-8 rounded-full object-cover" alt="IC Events"/>
+        <div>
+          <p class="font-display font-medium text-sm">IC Events</p>
+          <p class="text-xs text-steel-500"><span class="lang-az">Bakı, Azərbaycan · qlobal təşkil olunur</span><span class="lang-en">Baku, Azerbaijan · organized globally</span></p>
+        </div>
+      </div>
+      <div class="flex flex-wrap gap-x-6 gap-y-2 text-xs text-steel-500">
+        <a href="events.html" class="hover:text-ink"><span class="lang-az">Tədbirlər</span><span class="lang-en">Events</span></a>
+        <a href="license.html" class="hover:text-ink"><span class="lang-az">Lisenziya</span><span class="lang-en">License</span></a>
+        <a href="membership.html" class="hover:text-ink"><span class="lang-az">Üzvlük</span><span class="lang-en">Membership</span></a>
+        <a href="ambassador.html" class="hover:text-ink"><span class="lang-az">Səfirlik</span><span class="lang-en">Ambassador</span></a>
+        <a href="rules.html" class="hover:text-ink"><span class="lang-az">Qaydalar</span><span class="lang-en">Rules</span></a>
+        <a href="organizers.html" class="hover:text-ink"><span class="lang-az">Təşkilatçılar</span><span class="lang-en">Organizers</span></a>
+        <a href="faq.html" class="hover:text-ink">FAQ</a>
+        <a href="contact.html" class="hover:text-ink"><span class="lang-az">Əlaqə</span><span class="lang-en">Contact</span></a>
+      </div>
+      <div class="flex gap-3">
+        <a href="https://www.linkedin.com/company/industrcons/" target="_blank" rel="noopener noreferrer" class="text-steel-500 hover:text-ink text-xs font-mono border border-ink/15 rounded-full px-3 py-1.5">LinkedIn</a>
+        <a href="https://www.instagram.com/industrcons" target="_blank" rel="noopener noreferrer" class="text-steel-500 hover:text-ink text-xs font-mono border border-ink/15 rounded-full px-3 py-1.5">Instagram</a>
+      </div>
+    </div>
+    <div class="max-w-6xl mx-auto px-6 mt-8 pt-6 border-t border-ink/5 text-xs text-steel-400">
+      © 2026 IC Events by IndustrCons. <span class="lang-az">Bütün hüquqlar qorunur.</span><span class="lang-en">All rights reserved.</span>
+    </div>
+  </footer>
+
+  <script src="js/site.js"></script>
+</body>
+</html>
