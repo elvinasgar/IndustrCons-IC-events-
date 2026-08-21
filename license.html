@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="az" data-lang="az">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lisenziya / License — IC Event</title>
+<link rel="icon" href="assets/logo-128.png" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="js/tailwind-config.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-paper text-ink">
+
+  <header class="border-b border-ink/10 sticky top-0 z-30 bg-paper/90 backdrop-blur">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2">
+        <img src="assets/logo-128.png" alt="IC Event" class="h-10 w-10 rounded-full object-cover" />
+        <span class="font-display font-medium tracking-tight">IC Event</span>
+      </a>
+      <nav class="hidden lg:flex items-center gap-5 text-sm text-steel-600">
+        <a href="events.html" class="hover:text-ink"><span class="lang-az">Tədbirlər</span><span class="lang-en">Events</span></a>
+        <a href="license.html" class="text-ink font-medium"><span class="lang-az">Lisenziya</span><span class="lang-en">License</span></a>
+        <a href="membership.html" class="hover:text-ink"><span class="lang-az">Üzvlük</span><span class="lang-en">Membership</span></a>
+        <a href="ambassador.html" class="hover:text-ink"><span class="lang-az">Səfirlik</span><span class="lang-en">Ambassador</span></a>
+        <a href="organizers.html" class="hover:text-ink"><span class="lang-az">Reyestr</span><span class="lang-en">Registry</span></a>
+        <a href="donation.html" class="hover:text-ink"><span class="lang-az">Dəstək</span><span class="lang-en">Support</span></a>
+        <a href="rules.html" class="hover:text-ink"><span class="lang-az">Qaydalar</span><span class="lang-en">Rules</span></a>
+        <a href="faq.html" class="hover:text-ink"><span class="lang-az">FAQ</span><span class="lang-en">FAQ</span></a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <div class="hidden sm:flex items-center gap-1 text-xs font-mono">
+          <button id="lang-az-btn" onclick="setLang('az')" class="px-1.5 py-1">AZ</button>
+          <span class="text-steel-300">/</span>
+          <button id="lang-en-btn" onclick="setLang('en')" class="px-1.5 py-1">EN</button>
+        </div>
+        <a href="license.html" class="btn-primary hidden md:inline-flex"><span class="lang-az">Müraciət et</span><span class="lang-en">Apply</span> →</a>
+        <button onclick="toggleMobileMenu()" class="lg:hidden p-2" aria-label="Menu">☰</button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="mobile-menu lg:hidden flex-col gap-1 px-6 pb-4 border-t border-ink/10">
+      <a href="events.html" class="py-2 text-sm"><span class="lang-az">Tədbirlər</span><span class="lang-en">Events</span></a>
+      <a href="license.html" class="py-2 text-sm"><span class="lang-az">Lisenziya</span><span class="lang-en">License</span></a>
+      <a href="membership.html" class="py-2 text-sm"><span class="lang-az">Üzvlük</span><span class="lang-en">Membership</span></a>
+      <a href="ambassador.html" class="py-2 text-sm"><span class="lang-az">Səfirlik</span><span class="lang-en">Ambassador</span></a>
+      <a href="organizers.html" class="py-2 text-sm"><span class="lang-az">Reyestr</span><span class="lang-en">Registry</span></a>
+      <a href="donation.html" class="py-2 text-sm"><span class="lang-az">Dəstək</span><span class="lang-en">Support</span></a>
+      <a href="rules.html" class="py-2 text-sm"><span class="lang-az">Qaydalar</span><span class="lang-en">Rules</span></a>
+      <a href="faq.html" class="py-2 text-sm"><span class="lang-az">FAQ</span><span class="lang-en">FAQ</span></a>
+      <a href="contact.html" class="py-2 text-sm"><span class="lang-az">Əlaqə</span><span class="lang-en">Contact</span></a>
+      <div class="flex items-center gap-2 pt-2">
+        <button onclick="setLang('az')" class="text-xs font-mono px-2 py-1 border border-ink/15 rounded-full">AZ</button>
+        <button onclick="setLang('en')" class="text-xs font-mono px-2 py-1 border border-ink/15 rounded-full">EN</button>
+      </div>
+      <a href="license.html" class="btn-primary justify-center mt-2"><span class="lang-az">Müraciət et</span><span class="lang-en">Apply</span></a>
+    </div>
+  </header>
+
+  <section class="py-16 border-b border-ink/10">
+    <div class="max-w-2xl mx-auto px-6">
+      <span class="label-mono"><span class="lang-az">LİSENZİYA</span><span class="lang-en">LICENSE</span></span>
+      <h1 class="mt-3 font-display text-3xl font-medium tracking-tight"><span class="lang-az">Öz adına lisenziya al, öz şəhərində IC Event təşkil et.</span><span class="lang-en">Get a license in your name, organize IC Event in your city.</span></h1>
+      <p class="mt-3 text-steel-600 leading-relaxed"><span class="lang-az">Lisenziya, TEDx-in tanıdığımız modelinə bənzəyir: bir təşkilatçının adına, konkret bir tədbir/şəhər adı altında verilir və 1 il etibarlıdır. Müraciət heç bir hesab yaratmır — email ilə göndərilir, əl ilə nəzərdən keçirilir.</span><span class="lang-en">A license works like the model many recognize from TEDx: it's issued to a named organizer, under a specific event/city name, and is valid for 1 year. Applying doesn't create an account — it's sent by email and reviewed by hand.</span></p>
+      <p class="mt-3 text-sm text-steel-500 leading-relaxed"><span class="lang-az">Kökümüz mühəndislikdədir — konseptimiz də belə qalacaq. Amma digər sahələrdən (biznes, dizayn, texnologiya, səhiyyə və s.) də müraciətlərə açığıq.</span><span class="lang-en">Our roots are in engineering — that's the concept we'll keep. But we're open to applications from other fields too (business, design, technology, healthcare, etc.).</span></p>
+    </div>
+  </section>
+
+  <section class="py-14 border-b border-ink/10">
+    <div class="max-w-2xl mx-auto px-6">
+      <p class="label-mono mb-4"><span class="lang-az">LİSENZİYA NECƏ İŞLƏYİR</span><span class="lang-en">HOW THE LICENSE WORKS</span></p>
+      <div class="grid gap-3 sm:grid-cols-3 text-sm">
+        <div class="card"><p class="font-display font-medium">1. <span class="lang-az">Ad</span><span class="lang-en">Name</span></p><p class="text-xs text-steel-500 mt-1"><span class="lang-az">Lisenziya sənin adına və konkret tədbir/şəhər adı altında verilir — məs: "IC - MUSIAD Azərbaycan"</span><span class="lang-en">The license is issued to your name, under a specific event/city name — e.g. "IC - MUSIAD Azerbaijan"</span></p></div>
+        <div class="card"><p class="font-display font-medium">2. <span class="lang-az">1 il</span><span class="lang-en">1 year</span></p><p class="text-xs text-steel-500 mt-1"><span class="lang-az">Alındığı tarixdən etibarən 1 il keçərlidir, sonra yenilənməlidir</span><span class="lang-en">Valid for 1 year from the issue date, then must be renewed</span></p></div>
+        <div class="card"><p class="font-display font-medium">3. <span class="lang-az">Reyestr</span><span class="lang-en">Registry</span></p><p class="text-xs text-steel-500 mt-1"><span class="lang-az">Təsdiqlənən lisenziyalar açıq reyestrdə göstərilir</span><span class="lang-en">Approved licenses are listed in the public registry</span></p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-14 border-b border-ink/10">
+    <div class="max-w-2xl mx-auto px-6">
+      <p class="label-mono mb-4"><span class="lang-az">LİSENZİYA NÖVLƏRİ</span><span class="lang-en">LICENSE TYPES</span></p>
+      <div class="grid gap-4 sm:grid-cols-3">
+        <div class="card">
+          <span class="badge badge-blueprint">IC EVENT</span>
+          <p class="font-display font-medium mt-3"><span class="lang-az">Standart</span><span class="lang-en">Standard</span></p>
+          <p class="text-sm text-steel-600 mt-2 leading-relaxed"><span class="lang-az">Əsas lisenziya — şirkət, açıq məkan və ya qarışıq auditoriya üçün.</span><span class="lang-en">The core license — for a company, public space, or mixed audience.</span></p>
+        </div>
+        <div class="card">
+          <span class="badge badge-green">IC EVENT CAMPUS</span>
+          <p class="font-display font-medium mt-3"><span class="lang-az">Universitet</span><span class="lang-en">University</span></p>
+          <p class="text-sm text-steel-600 mt-2 leading-relaxed"><span class="lang-az">Tələbə təşkilatları və universitetlər üçün — kampus daxilində.</span><span class="lang-en">For student organizations and universities — held on campus.</span></p>
+        </div>
+        <div class="card">
+          <span class="badge badge-signal">IC EVENT SALON</span>
+          <p class="font-display font-medium mt-3"><span class="lang-az">Kiçik format</span><span class="lang-en">Small format</span></p>
+          <p class="text-sm text-steel-600 mt-2 leading-relaxed"><span class="lang-az">50 nəfərədək qeyri-rəsmi görüş — daha yüngül tələblərlə.</span><span class="lang-en">An informal gathering of up to 50 people — with lighter requirements.</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-14 border-b border-ink/10">
+    <div class="max-w-2xl mx-auto px-6">
+      <p class="label-mono mb-3"><span class="lang-az">MÜRACİƏT ŞABLONU — DÜZƏLİŞ ET</span><span class="lang-en">APPLICATION TEMPLATE — EDIT IT</span></p>
+      <p class="text-sm text-steel-600 mb-4"><span class="lang-az">"..." yerlərini öz məlumatınla əvəz et, sonra "Gmail-də aç" düyməsinə bas.</span><span class="lang-en">Replace the "..." placeholders with your own details, then click "Open in Gmail".</span></p>
+      <div id="license-template-box" class="template-box"></div>
+      <div class="mt-4 flex flex-wrap gap-3">
+        <a id="license-gmail-btn" href="#" class="btn-primary"><span class="lang-az">Gmail-də aç və göndər</span><span class="lang-en">Open in Gmail and send</span> →</a>
+        <button id="license-copy-btn" type="button" class="btn-outline"><span class="lang-az">Şablonu kopyala</span><span class="lang-en">Copy template</span></button>
+      </div>
+      <p class="text-xs text-steel-400 mt-4"><span class="lang-az">Gmail açılmırsa: şablonu kopyala və industrcons@gmail.com ünvanına istənilən poçt proqramından göndər.</span><span class="lang-en">If Gmail doesn't open: copy the template and send it to industrcons@gmail.com from any mail app.</span></p>
+    </div>
+  </section>
+
+  <section class="py-14">
+    <div class="max-w-2xl mx-auto px-6">
+      <p class="label-mono mb-3"><span class="lang-az">TƏSDİQLƏNDİKDƏN SONRA NƏ OLUR</span><span class="lang-en">WHAT HAPPENS AFTER APPROVAL</span></p>
+      <p class="text-sm text-steel-600 leading-relaxed">
+        <span class="lang-az">Tədbir keçirilib çəkilişi/şəkilləri təqdim olunduqdan sonra, sənin adın, lisenziya tarixin və tədbirin adı <a href="organizers.html" class="text-blueprint-600 font-medium">Reyestr</a> səhifəsinə əlavə olunur. Hazırda bunu əl ilə edirik; həcm artdıqca, bunu bir Google Formu + açıq cədvəl vasitəsilə avtomatlaşdırmağı planlaşdırırıq (kod və backend olmadan) — beləcə müraciət edən kimi məlumatların birbaşa reyestrə düşəcək.</span>
+        <span class="lang-en">Once the event is held and the recording/photos are submitted, your name, license date, and event name get added to the <a href="organizers.html" class="text-blueprint-600 font-medium">Registry</a> page. Right now we do this by hand; as volume grows, we plan to automate it with a Google Form + published spreadsheet (no code or backend needed) — so your details would flow straight into the registry once you apply.</span>
+      </p>
+    </div>
+  </section>
+
+  <footer class="border-t border-ink/10 py-10">
+    <div class="max-w-6xl mx-auto px-6 flex flex-wrap items-start justify-between gap-6">
+      <div class="flex items-center gap-2">
+        <img src="assets/logo-128.png" class="h-8 w-8 rounded-full object-cover" alt="IC Event"/>
+        <div>
+          <p class="font-display font-medium text-sm">IC Event</p>
+          <p class="text-xs text-steel-500"><span class="lang-az">Bakı, Azərbaycan · qlobal təşkil olunur</span><span class="lang-en">Baku, Azerbaijan · organized globally</span></p>
+        </div>
+      </div>
+      <div class="flex flex-wrap gap-x-6 gap-y-2 text-xs text-steel-500">
+        <a href="events.html" class="hover:text-ink"><span class="lang-az">Tədbirlər</span><span class="lang-en">Events</span></a>
+        <a href="license.html" class="hover:text-ink"><span class="lang-az">Lisenziya</span><span class="lang-en">License</span></a>
+        <a href="membership.html" class="hover:text-ink"><span class="lang-az">Üzvlük</span><span class="lang-en">Membership</span></a>
+        <a href="ambassador.html" class="hover:text-ink"><span class="lang-az">Səfirlik</span><span class="lang-en">Ambassador</span></a>
+        <a href="organizers.html" class="hover:text-ink"><span class="lang-az">Reyestr</span><span class="lang-en">Registry</span></a>
+        <a href="donation.html" class="hover:text-ink"><span class="lang-az">Dəstək</span><span class="lang-en">Support</span></a>
+        <a href="rules.html" class="hover:text-ink"><span class="lang-az">Qaydalar</span><span class="lang-en">Rules</span></a>
+        <a href="faq.html" class="hover:text-ink"><span class="lang-az">FAQ</span><span class="lang-en">FAQ</span></a>
+        <a href="contact.html" class="hover:text-ink"><span class="lang-az">Əlaqə</span><span class="lang-en">Contact</span></a>
+      </div>
+      <div class="flex gap-3">
+        <a href="https://www.linkedin.com/company/industrcons/" target="_blank" rel="noopener noreferrer" class="text-steel-500 hover:text-ink text-xs font-mono border border-ink/15 rounded-full px-3 py-1.5">LinkedIn</a>
+        <a href="https://www.instagram.com/industrcons" target="_blank" rel="noopener noreferrer" class="text-steel-500 hover:text-ink text-xs font-mono border border-ink/15 rounded-full px-3 py-1.5">Instagram</a>
+      </div>
+    </div>
+    <div class="max-w-6xl mx-auto px-6 mt-8 pt-6 border-t border-ink/5 text-xs text-steel-400">
+      © 2026 IC Event by IndustrCons. <span class="lang-az">Bütün hüquqlar qorunur.</span><span class="lang-en">All rights reserved.</span>
+    </div>
+  </footer>
+
+  <script src="js/site.js"></script>
+  <script>
+    var LICENSE_BODY_AZ = [
+      'Salam IC Event komandası,', '',
+      'Lisenziya üçün müraciət etmək istəyirəm.', '',
+      '- Ad, soyad: ...',
+      '- Email: ...',
+      '- Şəhər / Region: ...',
+      '- İstədiyim lisenziya növü (Standart / Campus / Salon): ...',
+      '- Tədbir/şəhər adı (məs: IC - [Şəhər/Tərəfdaş adı]): ...',
+      '- Məkan: ...',
+      '- Gözlənilən iştirakçı sayı: ...',
+      '- Spiker sayı: ...',
+      '- Əhatə edəcəyi mövzular: ...',
+      '- Tərəfdaş təşkilat (varsa): ...',
+      '- Əlavə qeyd: ...', '',
+      'Təşəkkürlər,', '[Adınız]',
+    ].join('\n');
+    var LICENSE_BODY_EN = [
+      'Hello IC Event team,', '',
+      'I would like to apply for a license.', '',
+      '- Full name: ...',
+      '- Email: ...',
+      '- City / Region: ...',
+      '- License type wanted (Standard / Campus / Salon): ...',
+      '- Event/city name (e.g. IC - [City/Partner name]): ...',
+      '- Venue: ...',
+      '- Expected number of participants: ...',
+      '- Number of speakers: ...',
+      '- Topics it will cover: ...',
+      '- Partner organization (if any): ...',
+      '- Anything else: ...', '',
+      'Thank you,', '[Your name]',
+    ].join('\n');
+    setupApplicationTemplate({
+      to: 'industrcons@gmail.com',
+      subjectAz: 'Lisenziya Müraciəti', subjectEn: 'License Application',
+      bodyAz: LICENSE_BODY_AZ, bodyEn: LICENSE_BODY_EN,
+      boxId: 'license-template-box', gmailBtnId: 'license-gmail-btn', copyBtnId: 'license-copy-btn',
+    });
+  </script>
+</body>
+</html>

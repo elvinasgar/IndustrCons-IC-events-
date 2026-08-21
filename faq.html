@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="az" data-lang="az">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>FAQ — IC Event</title>
+<link rel="icon" href="assets/logo-128.png" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="js/tailwind-config.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-paper text-ink">
+
+  <header class="border-b border-ink/10 sticky top-0 z-30 bg-paper/90 backdrop-blur">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2">
+        <img src="assets/logo-128.png" alt="IC Event" class="h-10 w-10 rounded-full object-cover" />
+        <span class="font-display font-medium tracking-tight">IC Event</span>
+      </a>
+      <nav class="hidden lg:flex items-center gap-5 text-sm text-steel-600">
+        <a href="events.html" class="hover:text-ink"><span class="lang-az">Tədbirlər</span><span class="lang-en">Events</span></a>
+        <a href="license.html" class="hover:text-ink"><span class="lang-az">Lisenziya</span><span class="lang-en">License</span></a>
+        <a href="membership.html" class="hover:text-ink"><span class="lang-az">Üzvlük</span><span class="lang-en">Membership</span></a>
+        <a href="ambassador.html" class="hover:text-ink"><span class="lang-az">Səfirlik</span><span class="lang-en">Ambassador</span></a>
+        <a href="organizers.html" class="hover:text-ink"><span class="lang-az">Reyestr</span><span class="lang-en">Registry</span></a>
+        <a href="donation.html" class="hover:text-ink"><span class="lang-az">Dəstək</span><span class="lang-en">Support</span></a>
+        <a href="rules.html" class="hover:text-ink"><span class="lang-az">Qaydalar</span><span class="lang-en">Rules</span></a>
+        <a href="faq.html" class="text-ink font-medium"><span class="lang-az">FAQ</span><span class="lang-en">FAQ</span></a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <div class="hidden sm:flex items-center gap-1 text-xs font-mono">
+          <button id="lang-az-btn" onclick="setLang('az')" class="px-1.5 py-1">AZ</button>
+          <span class="text-steel-300">/</span>
+          <button id="lang-en-btn" onclick="setLang('en')" class="px-1.5 py-1">EN</button>
+        </div>
+        <a href="license.html" class="btn-primary hidden md:inline-flex"><span class="lang-az">Müraciət et</span><span class="lang-en">Apply</span> →</a>
+        <button onclick="toggleMobileMenu()" class="lg:hidden p-2" aria-label="Menu">☰</button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="mobile-menu lg:hidden flex-col gap-1 px-6 pb-4 border-t border-ink/10">
+      <a href="events.html" class="py-2 text-sm"><span class="lang-az">Tədbirlər</span><span class="lang-en">Events</span></a>
+      <a href="license.html" class="py-2 text-sm"><span class="lang-az">Lisenziya</span><span class="lang-en">License</span></a>
+      <a href="membership.html" class="py-2 text-sm"><span class="lang-az">Üzvlük</span><span class="lang-en">Membership</span></a>
+      <a href="ambassador.html" class="py-2 text-sm"><span class="lang-az">Səfirlik</span><span class="lang-en">Ambassador</span></a>
+      <a href="organizers.html" class="py-2 text-sm"><span class="lang-az">Reyestr</span><span class="lang-en">Registry</span></a>
+      <a href="donation.html" class="py-2 text-sm"><span class="lang-az">Dəstək</span><span class="lang-en">Support</span></a>
+      <a href="rules.html" class="py-2 text-sm"><span class="lang-az">Qaydalar</span><span class="lang-en">Rules</span></a>
+      <a href="faq.html" class="py-2 text-sm"><span class="lang-az">FAQ</span><span class="lang-en">FAQ</span></a>
+      <a href="contact.html" class="py-2 text-sm"><span class="lang-az">Əlaqə</span><span class="lang-en">Contact</span></a>
+      <div class="flex items-center gap-2 pt-2">
+        <button onclick="setLang('az')" class="text-xs font-mono px-2 py-1 border border-ink/15 rounded-full">AZ</button>
+        <button onclick="setLang('en')" class="text-xs font-mono px-2 py-1 border border-ink/15 rounded-full">EN</button>
+      </div>
+      <a href="license.html" class="btn-primary justify-center mt-2"><span class="lang-az">Müraciət et</span><span class="lang-en">Apply</span></a>
+    </div>
+  </header>
+
+  <section class="py-16">
+    <div class="max-w-2xl mx-auto px-6">
+      <span class="label-mono">FAQ</span>
+      <h1 class="mt-3 font-display text-3xl font-medium tracking-tight"><span class="lang-az">Tez-tez verilən suallar</span><span class="lang-en">Frequently asked questions</span></h1>
+      <div class="mt-8 flex flex-col gap-3">
+        <div class="card">
+          <button type="button" onclick="toggleReveal('a1','i1')" class="w-full flex items-center justify-between text-left gap-3">
+            <span class="font-display font-medium"><span class="lang-az">IC Event nədir?</span><span class="lang-en">What is IC Event?</span></span>
+            <span id="i1" class="text-blueprint-500 shrink-0">+</span>
+          </button>
+          <div id="a1" class="hidden mt-3 text-sm text-steel-600 leading-relaxed">
+            <span class="lang-az">IndustrCons tərəfindən qurulan icma tədbirləri şəbəkəsidir. Şirkətlərdə, universitetlərdə, açıq məkanlarda və onlayn keçirilən tədbirlər üçün ortaq bir standart və brend təqdim edirik.</span><span class="lang-en">A community events network by IndustrCons. We provide a shared standard and brand for events held at companies, universities, public spaces, and online.</span>
+          </div>
+        </div>
+        <div class="card">
+          <button type="button" onclick="toggleReveal('a2','i2')" class="w-full flex items-center justify-between text-left gap-3">
+            <span class="font-display font-medium"><span class="lang-az">Bu, TEDx ilə əlaqəlidirmi?</span><span class="lang-en">Is this related to TEDx?</span></span>
+            <span id="i2" class="text-blueprint-500 shrink-0">+</span>
+          </button>
+          <div id="a2" class="hidden mt-3 text-sm text-steel-600 leading-relaxed">
+            <span class="lang-az">Xeyr. IC Event müstəqil brenddir, heç bir üçüncü tərəf tədbir şəbəkəsi ilə əlaqəli, ondan lisenziyalı və ya ona bağlı deyil.</span><span class="lang-en">No. IC Event is an independent brand, not affiliated with, licensed by, or connected to any third-party event network.</span>
+          </div>
+        </div>
+        <div class="card">
+          <button type="button" onclick="toggleReveal('a3','i3')" class="w-full flex items-center justify-between text-left gap-3">
+            <span class="font-display font-medium"><span class="lang-az">Lisenziya nə qədər müddətə etibarlıdır?</span><span class="lang-en">How long is a license valid?</span></span>
+            <span id="i3" class="text-blueprint-500 shrink-0">+</span>
+          </button>
+          <div id="a3" class="hidden mt-3 text-sm text-steel-600 leading-relaxed">
+            <span class="lang-az">Alındığı tarixdən etibarən 1 il. Məsələn, 19.08.2026-da alınan lisenziya 19.08.2027-dək etibarlıdır, sonra yenilənməlidir.</span><span class="lang-en">For 1 year from the issue date. For example, a license issued on 19.08.2026 is valid until 19.08.2027, then must be renewed.</span>
+          </div>
+        </div>
+        <div class="card">
+          <button type="button" onclick="toggleReveal('a4','i4')" class="w-full flex items-center justify-between text-left gap-3">
+            <span class="font-display font-medium"><span class="lang-az">Lisenziya, üzvlük və səfirlik arasında fərq nədir?</span><span class="lang-en">What is the difference between a license, membership, and ambassadorship?</span></span>
+            <span id="i4" class="text-blueprint-500 shrink-0">+</span>
+          </button>
+          <div id="a4" class="hidden mt-3 text-sm text-steel-600 leading-relaxed">
+            <span class="lang-az"><strong>Lisenziya</strong> — bir təşkilatçının adına, konkret tədbir/şəhər adı altında 1 illik icazədir. <strong>Üzvlük</strong> — icmanın daimi hissəsi olmaqdır. <strong>Səfirlik</strong> — yerli icmada IC Event-i aktiv təmsil edən könüllü rolu.</span><span class="lang-en"><strong>A license</strong> is a 1-year permission issued to a named organizer, under a specific event/city name. <strong>Membership</strong> means being a permanent part of the community. <strong>Ambassadorship</strong> is a volunteer role actively representing IC Event locally.</span>
+          </div>
+        </div>
+        <div class="card">
+          <button type="button" onclick="toggleReveal('a5','i5')" class="w-full flex items-center justify-between text-left gap-3">
+            <span class="font-display font-medium"><span class="lang-az">Tədbir haradan keçirilə bilər?</span><span class="lang-en">Where can an event be held?</span></span>
+            <span id="i5" class="text-blueprint-500 shrink-0">+</span>
+          </button>
+          <div id="a5" class="hidden mt-3 text-sm text-steel-600 leading-relaxed">
+            <span class="lang-az">İstənilən yerdə — şirkət ofisində, universitet auditoriyasında, açıq məkanda/küçədə, ya da tamamilə onlayn (podcast, vebinar).</span><span class="lang-en">Anywhere — a company office, a university auditorium, a public space/street, or entirely online (podcast, webinar).</span>
+          </div>
+        </div>
+        <div class="card">
+          <button type="button" onclick="toggleReveal('a6','i6')" class="w-full flex items-center justify-between text-left gap-3">
+            <span class="font-display font-medium"><span class="lang-az">Uyğunluğa kim nəzarət edir?</span><span class="lang-en">Who monitors compliance?</span></span>
+            <span id="i6" class="text-blueprint-500 shrink-0">+</span>
+          </button>
+          <div id="a6" class="hidden mt-3 text-sm text-steel-600 leading-relaxed">
+            <span class="lang-az">Hər tədbir admin və ya yerli səfirlər tərəfindən Qaydalara uyğunluq baxımından yoxlanılır.</span><span class="lang-en">Every event is checked for compliance with the Rules by admin or local ambassadors.</span>
+          </div>
+        </div>
+        <div class="card">
+          <button type="button" onclick="toggleReveal('a7','i7')" class="w-full flex items-center justify-between text-left gap-3">
+            <span class="font-display font-medium"><span class="lang-az">Yalnız mühəndislər üçündürmü?</span><span class="lang-en">Is this only for engineers?</span></span>
+            <span id="i7" class="text-blueprint-500 shrink-0">+</span>
+          </button>
+          <div id="a7" class="hidden mt-3 text-sm text-steel-600 leading-relaxed">
+            <span class="lang-az">Kökümüz və konseptimiz mühəndislikdədir, amma digər sahələrdən (biznes, dizayn, texnologiya, səhiyyə və s.) də müraciətlərə açığıq.</span><span class="lang-en">Our roots and concept are in engineering, but we are open to applications from other fields too (business, design, technology, healthcare, etc.).</span>
+          </div>
+        </div>
+        <div class="card">
+          <button type="button" onclick="toggleReveal('a8','i8')" class="w-full flex items-center justify-between text-left gap-3">
+            <span class="font-display font-medium"><span class="lang-az">Müraciət etmək pulludurmu?</span><span class="lang-en">Is applying free?</span></span>
+            <span id="i8" class="text-blueprint-500 shrink-0">+</span>
+          </button>
+          <div id="a8" class="hidden mt-3 text-sm text-steel-600 leading-relaxed">
+            <span class="lang-az">Bəli, lisenziya, üzvlük və səfirlik müraciətləri tamamilə pulsuzdur. Dəstək/donation isə tamamilə könüllüdür.</span><span class="lang-en">Yes, license, membership, and ambassador applications are completely free. Support/donations are entirely voluntary.</span>
+          </div>
+        </div>
+        <div class="card">
+          <button type="button" onclick="toggleReveal('a9','i9')" class="w-full flex items-center justify-between text-left gap-3">
+            <span class="font-display font-medium"><span class="lang-az">Sualım cavablanmadı, kiminlə əlaqə saxlayım?</span><span class="lang-en">My question was not answered, who do I contact?</span></span>
+            <span id="i9" class="text-blueprint-500 shrink-0">+</span>
+          </button>
+          <div id="a9" class="hidden mt-3 text-sm text-steel-600 leading-relaxed">
+            <span class="lang-az">industrcons@gmail.com ünvanına yaz, ya da <a href="contact.html" class="text-blueprint-600 font-medium">Əlaqə</a> səhifəsindən istifadə et.</span><span class="lang-en">Email industrcons@gmail.com, or use the <a href="contact.html" class="text-blueprint-600 font-medium">Contact</a> page.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="border-t border-ink/10 py-10">
+    <div class="max-w-6xl mx-auto px-6 flex flex-wrap items-start justify-between gap-6">
+      <div class="flex items-center gap-2">
+        <img src="assets/logo-128.png" class="h-8 w-8 rounded-full object-cover" alt="IC Event"/>
+        <div>
+          <p class="font-display font-medium text-sm">IC Event</p>
+          <p class="text-xs text-steel-500"><span class="lang-az">Bakı, Azərbaycan · qlobal təşkil olunur</span><span class="lang-en">Baku, Azerbaijan · organized globally</span></p>
+        </div>
+      </div>
+      <div class="flex flex-wrap gap-x-6 gap-y-2 text-xs text-steel-500">
+        <a href="events.html" class="hover:text-ink"><span class="lang-az">Tədbirlər</span><span class="lang-en">Events</span></a>
+        <a href="license.html" class="hover:text-ink"><span class="lang-az">Lisenziya</span><span class="lang-en">License</span></a>
+        <a href="membership.html" class="hover:text-ink"><span class="lang-az">Üzvlük</span><span class="lang-en">Membership</span></a>
+        <a href="ambassador.html" class="hover:text-ink"><span class="lang-az">Səfirlik</span><span class="lang-en">Ambassador</span></a>
+        <a href="organizers.html" class="hover:text-ink"><span class="lang-az">Reyestr</span><span class="lang-en">Registry</span></a>
+        <a href="donation.html" class="hover:text-ink"><span class="lang-az">Dəstək</span><span class="lang-en">Support</span></a>
+        <a href="rules.html" class="hover:text-ink"><span class="lang-az">Qaydalar</span><span class="lang-en">Rules</span></a>
+        <a href="faq.html" class="hover:text-ink"><span class="lang-az">FAQ</span><span class="lang-en">FAQ</span></a>
+        <a href="contact.html" class="hover:text-ink"><span class="lang-az">Əlaqə</span><span class="lang-en">Contact</span></a>
+      </div>
+      <div class="flex gap-3">
+        <a href="https://www.linkedin.com/company/industrcons/" target="_blank" rel="noopener noreferrer" class="text-steel-500 hover:text-ink text-xs font-mono border border-ink/15 rounded-full px-3 py-1.5">LinkedIn</a>
+        <a href="https://www.instagram.com/industrcons" target="_blank" rel="noopener noreferrer" class="text-steel-500 hover:text-ink text-xs font-mono border border-ink/15 rounded-full px-3 py-1.5">Instagram</a>
+      </div>
+    </div>
+    <div class="max-w-6xl mx-auto px-6 mt-8 pt-6 border-t border-ink/5 text-xs text-steel-400">
+      © 2026 IC Event by IndustrCons. <span class="lang-az">Bütün hüquqlar qorunur.</span><span class="lang-en">All rights reserved.</span>
+    </div>
+  </footer>
+
+  <script src="js/site.js"></script>
+</body>
+</html>
