@@ -4,6 +4,14 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Tədbirlər / Events — IC Event</title>
+<meta name="description" content="IC Event tədbir formatları: şirkət, universitet, açıq məkan, Green Events, podcast və vebinar. Rəsmi lisenziyalı tədbirlər." />
+<meta name="theme-color" content="#000000" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="IC Event" />
+<meta property="og:title" content="Tədbirlər / Events — IC Event" />
+<meta property="og:description" content="IC Event tədbir formatları: şirkət, universitet, açıq məkan, Green Events, podcast və vebinar. Rəsmi lisenziyalı tədbirlər." />
+<meta property="og:image" content="assets/logo-512.png" />
+<meta name="twitter:card" content="summary" />
 <link rel="icon" href="assets/logo-128.png" />
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="js/tailwind-config.js"></script>
@@ -78,19 +86,8 @@
   <section class="py-16 border-b border-ink/10">
     <div class="max-w-6xl mx-auto px-6">
       <span class="label-mono"><span class="lang-az">LİSENZİYA REYESTRİ</span><span class="lang-en">LICENSE REGISTRY</span></span>
-      <h2 class="mt-3 font-display text-2xl font-medium tracking-tight"><span class="lang-az">Aktiv lisenziyamız</span><span class="lang-en">Our active license</span></h2>
-      <div class="mt-6 card max-w-xl">
-        <div class="flex items-start justify-between gap-3">
-          <span class="badge badge-green"><span class="pulse-dot"></span><span class="lang-az">AKTİV</span><span class="lang-en">ACTIVE</span></span>
-          <span class="text-xs text-steel-500 font-mono"><span class="lang-az">BAKI, AZƏRBAYCAN</span><span class="lang-en">BAKU, AZERBAIJAN</span></span>
-        </div>
-        <p class="font-display font-medium mt-3 text-lg">IC - MUSIAD Azərbaycan</p>
-        <p class="text-sm text-steel-600 mt-1"><span class="lang-az">Təşkilatçı:</span><span class="lang-en">Organizer:</span> <strong>Elvin Asgarov</strong></p>
-        <div class="grid grid-cols-2 gap-3 mt-4">
-          <div class="rounded-lg border border-ink/10 p-3 text-center"><p class="font-mono text-sm font-medium">19.08.2026</p><p class="text-[11px] text-steel-500 mt-0.5"><span class="lang-az">Lisenziya tarixi</span><span class="lang-en">Licensed since</span></p></div>
-          <div class="rounded-lg border border-ink/10 p-3 text-center"><p class="font-mono text-sm font-medium">19.08.2027</p><p class="text-[11px] text-steel-500 mt-0.5"><span class="lang-az">Etibarlıdır</span><span class="lang-en">Valid until</span></p></div>
-        </div>
-      </div>
+      <h2 class="mt-3 font-display text-2xl font-medium tracking-tight"><span class="lang-az">Rəsmi lisenziyalı tədbirlər</span><span class="lang-en">Officially licensed events</span></h2>
+      <div id="events-registry" class="mt-6 grid gap-5 max-w-xl"></div>
       <div class="mt-6"><a href="organizers.html" class="btn-outline"><span class="lang-az">Tam reyestrə bax</span><span class="lang-en">See the full registry</span> →</a></div>
     </div>
   </section>
@@ -135,6 +132,8 @@
     </div>
   </footer>
 
+  <script src="data/registry.js"></script>
   <script src="js/site.js"></script>
+  <script>document.addEventListener('DOMContentLoaded', function () { renderRegistry('events-registry'); });</script>
 </body>
 </html>

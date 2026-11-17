@@ -4,6 +4,14 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Reyestr / Registry — IC Event</title>
+<meta name="description" content="IC Event lisenziya reyestri: kim, harada və nə vaxtadək lisenziyalıdır. Lisenziyanı ad və ya kodla yoxla." />
+<meta name="theme-color" content="#000000" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="IC Event" />
+<meta property="og:title" content="Reyestr / Registry — IC Event" />
+<meta property="og:description" content="IC Event lisenziya reyestri: kim, harada və nə vaxtadək lisenziyalıdır. Lisenziyanı ad və ya kodla yoxla." />
+<meta property="og:image" content="assets/logo-512.png" />
+<meta name="twitter:card" content="summary" />
 <link rel="icon" href="assets/logo-128.png" />
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="js/tailwind-config.js"></script>
@@ -64,28 +72,22 @@
     </div>
   </section>
 
-  <section id="registry-list" class="py-16 border-b border-ink/10">
-    <div class="max-w-2xl mx-auto px-6 flex flex-col gap-5">
+  <section id="verify" class="py-14 border-b border-ink/10 scroll-mt-20">
+    <div class="max-w-2xl mx-auto px-6">
+      <p class="label-mono mb-3"><span class="lang-az">LİSENZİYANI YOXLA</span><span class="lang-en">VERIFY A LICENSE</span></p>
+      <p class="text-sm text-steel-600 mb-4"><span class="lang-az">Kimsə IC Event adı ilə tədbir keçirir? Təşkilatçının adını, tədbirin adını və ya lisenziya kodunu yaz — rəsmi reyestrdə olub-olmadığını görəcəksən.</span><span class="lang-en">Someone is running an event under the IC Event name? Enter the organizer's name, the event name, or the license code to see whether it's in the official registry.</span></p>
+      <form id="license-check-form" class="flex flex-col sm:flex-row gap-3" autocomplete="off">
+        <input id="license-check-input" type="text" class="field-input" aria-label="License" placeholder="ICE-2026-001 / Elvin Asgarov / IC - MUSIAD" />
+        <button type="submit" class="btn-primary justify-center shrink-0"><span class="lang-az">Yoxla</span><span class="lang-en">Verify</span></button>
+      </form>
+      <div id="license-check-result" class="mt-5 flex flex-col gap-4" aria-live="polite"></div>
+    </div>
+  </section>
 
-      <div class="card">
-        <div class="flex items-start justify-between gap-3">
-          <span class="badge badge-green"><span class="pulse-dot"></span><span class="lang-az">AKTİV</span><span class="lang-en">ACTIVE</span></span>
-          <span class="text-xs text-steel-500 font-mono"><span class="lang-az">BAKI, AZƏRBAYCAN</span><span class="lang-en">BAKU, AZERBAIJAN</span></span>
-        </div>
-        <p class="font-display font-medium mt-3 text-lg">IC - MUSIAD Azərbaycan</p>
-        <div class="flex items-center gap-3 mt-3">
-          <div class="h-11 w-11 rounded-full bg-blueprint-500/10 border border-blueprint-500/30 flex items-center justify-center text-blueprint-600 font-display font-medium">EA</div>
-          <div>
-            <p class="text-sm font-medium">Elvin Asgarov</p>
-            <p class="text-xs text-steel-500"><span class="lang-az">Təşkilatçı</span><span class="lang-en">Organizer</span></p>
-          </div>
-        </div>
-        <div class="grid grid-cols-2 gap-3 mt-4">
-          <div class="rounded-lg border border-ink/10 p-3 text-center"><p class="font-mono text-sm font-medium">19.08.2026</p><p class="text-[11px] text-steel-500 mt-0.5"><span class="lang-az">Lisenziya tarixi</span><span class="lang-en">Licensed since</span></p></div>
-          <div class="rounded-lg border border-ink/10 p-3 text-center"><p class="font-mono text-sm font-medium">19.08.2027</p><p class="text-[11px] text-steel-500 mt-0.5"><span class="lang-az">Etibarlıdır</span><span class="lang-en">Valid until</span></p></div>
-        </div>
-        <p class="text-xs text-steel-400 mt-3"><span class="lang-az">Tərəfdaş: MÜSİAD · Növ: IC Event Standart</span><span class="lang-en">Partner: MÜSİAD · Type: IC Event Standard</span></p>
-      </div>
+  <section id="registry-section" class="py-16 border-b border-ink/10">
+    <div class="max-w-2xl mx-auto px-6 flex flex-col gap-5">
+      <p class="label-mono"><span class="lang-az">BÜTÜN LİSENZİYALAR</span><span class="lang-en">ALL LICENSES</span></p>
+      <div id="registry-list" class="flex flex-col gap-5"></div>
 
       <div class="card flex items-start gap-4">
         <div class="h-16 w-16 rounded-full bg-signal/10 border border-signal/30 flex items-center justify-center text-signal-deep font-display font-medium text-lg shrink-0">
@@ -97,7 +99,6 @@
           <span class="badge badge-outline mt-2 inline-flex"><span class="lang-az">İlk lisenziyanı gözləyirik</span><span class="lang-en">Waiting for your first license</span></span>
         </div>
       </div>
-
     </div>
   </section>
 
@@ -138,12 +139,11 @@
     </div>
   </footer>
 
+  <script src="data/registry.js"></script>
   <script src="js/site.js"></script>
   <script>
-    // Optional: once IC_REGISTRY_CSV_URL is set in js/site.js (a published
-    // Google Sheet), this will auto-render new entries below the ones above.
     document.addEventListener('DOMContentLoaded', function () {
-      loadRegistryFromSheet('registry-list');
+      renderRegistry('registry-list');
     });
   </script>
 </body>

@@ -7,6 +7,8 @@ function toggleMobileMenu() {
 // ---------- Language toggle (AZ default, EN optional) ----------
 function setLang(lang) {
   document.documentElement.setAttribute('data-lang', lang);
+  // keep <html lang> in sync: CSS uppercase uses it (az would turn i into İ in English text)
+  document.documentElement.setAttribute('lang', lang);
   try { localStorage.setItem('ic_lang', lang); } catch (e) {}
   var azBtn = document.getElementById('lang-az-btn');
   var enBtn = document.getElementById('lang-en-btn');
@@ -74,34 +76,138 @@ function setupApplicationTemplate(opts) {
   render();
 }
 
-// ---------- License Registry (optional auto-feed from a published Google Sheet CSV) ----------
-// If a sheet URL is configured below, licensed events are fetched and
-// rendered automatically. Until then, the page shows the hardcoded
-// entries already in the HTML — nothing breaks either way.
-var IC_REGISTRY_CSV_URL = ''; // e.g. a Google Sheet published as CSV
-
-function loadRegistryFromSheet(targetId) {
-  var el = document.getElementById(targetId);
-  if (!el || !IC_REGISTRY_CSV_URL) return;
-  fetch(IC_REGISTRY_CSV_URL)
-    .then(function (r) { return r.text(); })
-    .then(function (csv) {
-      var rows = csv.trim().split('\n').map(function (r) { return r.split(','); });
-      var headers = rows.shift();
-      var cards = rows.map(function (row) {
-        var rec = {};
-        headers.forEach(function (h, i) { rec[h.trim()] = (row[i] || '').trim(); });
-        return rec;
-      });
-      el.innerHTML = cards.map(renderRegistryCard).join('');
-    })
-    .catch(function () { /* silently keep the hardcoded fallback */ });
+// ---------- License Registry (data/registry.js) ----------
+function icLang() {
+  return document.documentElement.getAttribute('data-lang') === 'en' ? 'en' : 'az';
 }
 
-function renderRegistryCard(rec) {
-  return '<div class="card">' +
-    '<p class="font-display font-medium">' + (rec.event_name || '') + '</p>' +
-    '<p class="text-xs text-steel-500 mt-1">' + (rec.organizer || '') + ' · ' + (rec.city || '') + '</p>' +
-    '<p class="text-xs text-steel-400 mt-2 font-mono">' + (rec.issued || '') + ' → ' + (rec.expires || '') + '</p>' +
+function icPad(n) { return (n < 10 ? '0' : '') + n; }
+
+function icFormatDate(d) {
+  return icPad(d.getDate()) + '.' + icPad(d.getMonth() + 1) + '.' + d.getFullYear();
+}
+
+// issued is "YYYY-MM-DD"; expiry = same day, one year later
+function icLicenseDates(rec) {
+  var p = rec.issued.split('-');
+  var issued = new Date(+p[0], +p[1] - 1, +p[2]);
+  var expires = new Date(+p[0] + 1, +p[1] - 1, +p[2]);
+  return { issued: issued, expires: expires };
+}
+
+function icLicenseStatus(rec) {
+  var d = icLicenseDates(rec);
+  var now = new Date();
+  if (now < d.issued) return 'pending';
+  if (now >= d.expires) return 'expired';
+  return 'active';
+}
+
+function icInitials(name) {
+  return name.split(/\s+/).filter(Boolean).slice(0, 2).map(function (w) { return w.charAt(0).toUpperCase(); }).join('');
+}
+
+function icEsc(str) {
+  return String(str == null ? '' : str).replace(/[&<>"']/g, function (c) {
+    return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+  });
+}
+
+function icBadge(status) {
+  if (status === 'active') {
+    return '<span class="badge badge-green"><span class="pulse-dot"></span><span class="lang-az">AKTİV</span><span class="lang-en">ACTIVE</span></span>';
+  }
+  if (status === 'pending') {
+    return '<span class="badge badge-signal"><span class="lang-az">GÖZLƏNİLİR</span><span class="lang-en">PENDING</span></span>';
+  }
+  return '<span class="badge badge-outline"><span class="lang-az">MÜDDƏTİ BİTİB</span><span class="lang-en">EXPIRED</span></span>';
+}
+
+function icRegistryCard(rec) {
+  var d = icLicenseDates(rec);
+  var status = icLicenseStatus(rec);
+  var partner = rec.partner
+    ? '<span class="lang-az">Tərəfdaş: </span><span class="lang-en">Partner: </span>' + icEsc(rec.partner) + ' · '
+    : '';
+  return '<div class="card" data-license="' + icEsc(rec.code) + '">' +
+    '<div class="flex items-start justify-between gap-3">' + icBadge(status) +
+      '<span class="text-xs text-steel-500 font-mono uppercase">' +
+        '<span class="lang-az">' + icEsc(rec.cityAz) + ', ' + icEsc(rec.countryAz) + '</span>' +
+        '<span class="lang-en">' + icEsc(rec.cityEn) + ', ' + icEsc(rec.countryEn) + '</span>' +
+      '</span></div>' +
+    '<p class="font-display font-medium mt-3 text-lg"><span class="lang-az">' + icEsc(rec.eventAz) + '</span><span class="lang-en">' + icEsc(rec.eventEn) + '</span></p>' +
+    '<div class="flex items-center gap-3 mt-3">' +
+      '<div class="h-11 w-11 rounded-full bg-blueprint-500/10 border border-blueprint-500/30 flex items-center justify-center text-blueprint-600 font-display font-medium">' + icEsc(icInitials(rec.organizer)) + '</div>' +
+      '<div><p class="text-sm font-medium">' + icEsc(rec.organizer) + '</p>' +
+      '<p class="text-xs text-steel-500"><span class="lang-az">Təşkilatçı</span><span class="lang-en">Organizer</span></p></div>' +
+    '</div>' +
+    '<div class="grid grid-cols-2 gap-3 mt-4">' +
+      '<div class="rounded-lg border border-ink/10 p-3 text-center"><p class="font-mono text-sm font-medium">' + icFormatDate(d.issued) + '</p><p class="text-[11px] text-steel-500 mt-0.5"><span class="lang-az">Lisenziya tarixi</span><span class="lang-en">Licensed since</span></p></div>' +
+      '<div class="rounded-lg border border-ink/10 p-3 text-center"><p class="font-mono text-sm font-medium">' + icFormatDate(d.expires) + '</p><p class="text-[11px] text-steel-500 mt-0.5"><span class="lang-az">' + (status === 'expired' ? 'Bitib' : 'Etibarlıdır') + '</span><span class="lang-en">' + (status === 'expired' ? 'Expired' : 'Valid until') + '</span></p></div>' +
+    '</div>' +
+    '<p class="text-xs text-steel-400 mt-3">' + partner +
+      '<span class="lang-az">' + icEsc(rec.typeAz) + '</span><span class="lang-en">' + icEsc(rec.typeEn) + '</span> · <span class="font-mono">' + icEsc(rec.code) + '</span></p>' +
   '</div>';
 }
+
+function renderRegistry(targetId, limit) {
+  var el = document.getElementById(targetId);
+  if (!el || typeof IC_REGISTRY === 'undefined') return;
+  var list = limit ? IC_REGISTRY.slice(0, limit) : IC_REGISTRY;
+  el.innerHTML = list.map(icRegistryCard).join('');
+}
+
+// ---------- License checker ----------
+function icNormalize(str) {
+  // lower-case, then strip combining marks (handles İ, ö, ü, ş, ç, ğ),
+  // then map the two letters that do not decompose (ə, ı)
+  return String(str || '').toLowerCase()
+    .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+    .replace(/ə/g, 'e').replace(/ı/g, 'i')
+    .replace(/[^a-z0-9]+/g, ' ').trim();
+}
+
+function icFindLicense(query) {
+  var q = icNormalize(query);
+  if (!q || typeof IC_REGISTRY === 'undefined') return [];
+  return IC_REGISTRY.filter(function (rec) {
+    var hay = icNormalize([rec.code, rec.organizer, rec.eventAz, rec.eventEn].join(' '));
+    return hay.indexOf(q) !== -1;
+  });
+}
+
+function initLicenseChecker() {
+  var form = document.getElementById('license-check-form');
+  var input = document.getElementById('license-check-input');
+  var out = document.getElementById('license-check-result');
+  if (!form || !input || !out) return;
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var results = icFindLicense(input.value);
+    if (!input.value.trim()) { out.innerHTML = ''; return; }
+    if (!results.length) {
+      out.innerHTML = '<div class="card border-signal/40"><p class="font-display font-medium">' +
+        '<span class="lang-az">Reyestrdə tapılmadı</span><span class="lang-en">Not found in the registry</span></p>' +
+        '<p class="text-sm text-steel-600 mt-1"><span class="lang-az">Bu ad və ya kod ilə rəsmi lisenziya yoxdur. Əgər kimsə IC Event adı ilə tədbir keçirirsə, bizimlə əlaqə saxlayın.</span>' +
+        '<span class="lang-en">No official license matches this name or code. If someone is running an event under the IC Event name, please contact us.</span></p></div>';
+    } else {
+      out.innerHTML = results.map(icRegistryCard).join('');
+    }
+  });
+}
+document.addEventListener('DOMContentLoaded', initLicenseChecker);
+
+// ---------- Scroll reveal ----------
+// Content stays visible if JS or IntersectionObserver is unavailable.
+function initReveal() {
+  var items = document.querySelectorAll('.reveal');
+  if (!items.length || !('IntersectionObserver' in window)) return;
+  document.documentElement.classList.add('reveal-ready');
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) {
+      if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  items.forEach(function (el) { io.observe(el); });
+}
+document.addEventListener('DOMContentLoaded', initReveal);
